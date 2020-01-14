@@ -1,0 +1,29 @@
+RewriteEngine On
+
+# Đường dẫn trang   pages.php
+RewriteRule "trang" "pages.php"
+# Đường dẫn lỗi   index.php
+RewriteRule "404" "404.php"
+# Đường dẫn đang nhập  login.php
+RewriteRule "dang-nhap" "login.php"
+# Đường dẫn Trang chủ  index.php
+RewriteRule "trang-chu" "index.php"
+# Đường dẫn Khuyến mãi  promotion.php
+RewriteRule "khuyen-mai" "contact.php"
+# Đường dẫn giỏ hàng  cart.php
+RewriteRule "gio-hang" "cart.php"
+# Đường dẫn lien hệ  contact.php
+RewriteRule "khao-sat" "survey.php"
+# Đường dẫn lien hệ  contact.php
+RewriteRule "lien-he" "contact.php"
+# Đường dẫn sản phẩm  products.php
+RewriteRule "san-pham" "products.php"
+# Đường dẫn Hô sơ cá nhân  profile.php
+RewriteRule "ho-so" "profile.php"
+# Đường dẫn đơn hàng  orderdetails.php
+RewriteRule "don-hang" "orderdetails.php"
+# Đường dẫn so sanh compare.php
+RewriteRule "so-sanh" "compare.php"
+# Đương dẫn details.php?proid=
+RewriteRule "^(.*)-(.*).html$" "details.php?proid=$2"
+RewriteRule "productbycat" "productbycat.php"
