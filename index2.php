@@ -19,9 +19,6 @@ include 'helpers/slug.php';
     include_once ($filepath.'/classes/nhanvien.php');
     include_once ($filepath.'/../helpers/format.php');
 //
-
- $ten="Thoại Thẫn Thờ";
-$encode=utf8_encode($ten);
     //PHP OOP
     $cs = new nhanvien();   
      $get_nv = $cs->show_nhanvien();

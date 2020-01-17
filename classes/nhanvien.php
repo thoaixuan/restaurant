@@ -76,6 +76,14 @@
 			
 			return $result;
 		}
+		public function show5_nhanvien()
+		{
+			
+			$query = "SELECT * FROM nhanvien  ORDER BY ten ASC limit 5";	
+			$result = $this->db->select($query);
+			
+			return $result;
+		}
 		public function update_customers($data, $id)
 		{
 			
