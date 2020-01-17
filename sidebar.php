@@ -6,12 +6,12 @@ if($check =="index.php")
 	$check1 ="mm-active";
 }
 
-if($check =="liststaff.php")
+if($check =="liststaff.php" )
 {
 	$check2 ="mm-active";
 }
 
-if($check =="xacnhan.php")
+if($check =="newstaff.php")
 {
 	$check3 ="mm-active";
 }
@@ -36,6 +36,10 @@ if( $check =="matilde-otp.php")
                                     <a href="liststaff.php" class="<?php echo $check2 ?>">
                                         <i class="metismenu-icon pe-7s-tools"></i>
                                        Danh sách NV
+                                    </a>
+                                    <a href="newstaff.php" class="<?php echo $check3 ?>">
+                                        <i class="metismenu-icon pe-7s-news-paper"></i>
+                                       Thêm mới NV
                                     </a>
                                     
                                 </li>

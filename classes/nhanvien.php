@@ -13,18 +13,17 @@
 			$this->db = new Database();
 			$this->fm = new Format();
 		}
-		public function insert_nv($date)
+		public function insert_nv($date,$files)
 		{
-			$id = mysqli_real_escape_string($this->db->link, $date['id']);
+			
+			$note="No set";
+
 			$ten = mysqli_real_escape_string($this->db->link, $date['ten']);
 			$sdt = mysqli_real_escape_string($this->db->link, $date['sdt']);
 			$chucvu = mysqli_real_escape_string($this->db->link, $date['chucvu']);
-			$calamviec = mysqli_real_escape_string($this->db->link, $date['calamviec']);
-			$note = mysqli_real_escape_string($this->db->link, $date['ghichu']);
-			$count = mysqli_real_escape_string($this->db->link, $date['count']);
+			$note = mysqli_real_escape_string($this->db->link, $date['note']);
 			
-
-			if($id == "" || $ten == "" || $sdt == "" || $chucvu == "" || $calamviec == "" || $note == "" || $count == "" ){
+			if($ten == "" || $sdt == "" || $chucvu == "" ){
 				$alert = "<span class='error'>Fiedls must be not empty</span>";
 				return $alert;
 			}else{
@@ -34,10 +33,10 @@
 					$alert = "<span class='error'>Đã có nhân viên này </span>";
 					return $alert;
 				}else {
-					$query = "INSERT INTO nhanvien(id,ten,sdt,chucvu,calamviec,ghichu,count) VALUES('$id','$ten','$sdt','$chucvu','$calamviec','$note','$count') ";
+					$query = "INSERT INTO nhanvien(ten,sdt,chucvu,calamviec,ghichu) VALUES('$ten','$sdt','$chucvu','0-0','$note') ";
 					$result = $this->db->insert($query);
 					if($result){
-						$alert = "<span class='success'>Thêm nhân viên thành công</span>";
+						$alert = "<span style='color:blue;'>Thêm nhân viên thành công</span>";
 						return $alert;
 					}else {
 						$alert = "<span class='error'>Lỗi</span>";
@@ -46,34 +45,32 @@
 				}
 			}
 		}
-	/*	public function login_nv($date)
-		{
-			$chucvu =  $date['email'];
-			$password = md5($date['password']);
-			if($chucvu == '' || $password == ''){
-				$alert = "<span class='error'>Email And Password must be not empty</span>";
-				return $alert;
-			}else{
-				$check_login = "SELECT * FROM tbl_customer WHERE email='$chucvu' AND password='$password' ";
-				$result_check = $this->db->select($check_login);
-				if ($result_check != false) {
-					$value = $result_check->fetch_assoc();
-					Session::set('customer_login', true);
-					Session::set('customer_id', $value['id']);
-					Session::set('customer_name', $value['name']);
-					header('Location:order.php');
-				}else {
-					$alert = "<span class='error'>Email or Password doesn't match</span>";
-					return $alert;
-				}
-			}
-		}*/
+
 		public function show_nhanvien()
 		{
 			
 			$query = "SELECT * FROM nhanvien";	
 			$result = $this->db->select($query);
 			
+			return $result;
+		}
+		public function CountStaff()
+		{
+			$query = "SELECT COUNT(*) as nv FROM nhanvien";	
+			$result = $this->db->select($query);
+			return $result;
+		}
+		public function CountStaffRun()
+		{
+			$query = "SELECT COUNT(*) as nvcb FROM nhanvien where chucvu='Chạy bàn'";	
+			$result = $this->db->select($query);
+			return $result;
+		}
+
+		public function CountStaffCashier()
+		{
+			$query = "SELECT COUNT(*) as nvtn FROM nhanvien where chucvu='Thu ngân'";	
+			$result = $this->db->select($query);
 			return $result;
 		}
 		public function show5_nhanvien()
@@ -106,6 +103,18 @@
 						return $alert;
 				}
 				
+			}
+		}
+		public function del_staff($id)
+		{
+			$query = "DELETE FROM nhanvien where ten = '$id' ";
+			$result = $this->db->delete($query);
+			if($result){
+				$alert = "<span style='color:red'>Đã xóa nhân viên</span>";
+				return $alert;
+			}else {
+				$alert = "<span style='color:red'>Lỗi</span>";
+				return $alert;
 			}
 		}
 

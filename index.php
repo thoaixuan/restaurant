@@ -399,6 +399,16 @@ include 'helpers/slug.php';
                     </div>    
 <?php 
 include 'sidebar.php';
+$filepath = realpath(dirname(__FILE__));
+                                            include_once ($filepath.'/classes/nhanvien.php');
+                                            include_once ($filepath.'/../helpers/format.php');
+                                            //
+                                            //PHP OOP
+                                            $i=1;
+                                            $cs = new nhanvien();
+                                            $count=$cs->CountStaff();
+                                            $countcb=$cs->CountStaffRun();
+                                            $counttn=$cs->CountStaffCashier();
 ?>
                 </div>    <div class="app-main__outer">
                     <div class="app-main__inner">
@@ -411,7 +421,16 @@ include 'sidebar.php';
                                             <div class="widget-subheading"></div>
                                         </div>
                                         <div class="widget-content-right">
-                                            <div class="widget-numbers text-white"><span>1896</span></div>
+                                            <div class="widget-numbers text-white">
+                                            <span title="
+">
+<?php
+while($kq=$count->fetch_assoc())
+{
+    echo $kq['nv'];
+}
+?>
+                                            </span></div>
                                         </div>
                                     </div>
                                 </div>
@@ -433,11 +452,21 @@ include 'sidebar.php';
                                 <div class="card mb-3 widget-content bg-grow-early">
                                     <div class="widget-content-wrapper text-white">
                                         <div class="widget-content-left">
-                                            <div class="widget-heading">Followers</div>
-                                            <div class="widget-subheading">People Interested</div>
+                                            <div class="widget-heading">Count</div>
+                                            <div class="widget-subheading">
+                                                <?php while($kq1=$countcb->fetch_assoc())
+{
+    echo "Chạy bàn:<b style='color:blue;'> ".$kq1['nvcb'].'</b>';
+}
+?></div>
                                         </div>
                                         <div class="widget-content-right">
-                                            <div class="widget-numbers text-white"><span>46%</span></div>
+                                            <div class="widget-numbers text-white"><span><?php
+                                            while($kq2=$counttn->fetch_assoc())
+                                            {
+                                                echo "Thu ngân: ".$kq2['nvtn'];
+                                            }
+                                            ?></span></div>
                                         </div>
                                     </div>
                                 </div>
@@ -463,7 +492,7 @@ include 'sidebar.php';
                                     <div class="card-header">Danh sách NV
                                         <div class="btn-actions-pane-right">
                                             <div role="group" class="btn-group-sm btn-group">
-                                                <button class="active btn btn-focus">Xem chi tiết</button>
+                                                <button class="active btn btn-focus" onclick="window.location = 'liststaff.php'">Xem chi tiết</button>
                                                 <button class="btn btn-focus">Chia ca làm việc</button>
                                             </div>
                                         </div>
@@ -474,21 +503,14 @@ include 'sidebar.php';
                                             <tr>
                                                 <th class="text-center">#</th>
                                                 <th>Tên</th>
-                                                <th class="text-center">Chức vụ</th>
+                                                <th class="text-center">Chức vụ</th>   
                                                 <th class="text-center">Status</th>
                                                 <th class="text-center">Actions</th>
                                             </tr>
                                             </thead>
                                             <tbody>
                                             <?php
-
-                                            $filepath = realpath(dirname(__FILE__));
-                                            include_once ($filepath.'/classes/nhanvien.php');
-                                            include_once ($filepath.'/../helpers/format.php');
-                                            //
-                                            //PHP OOP
-                                            $i=1;
-                                            $cs = new nhanvien();   
+   
                                             $get_nv = $cs->show5_nhanvien();
                                                             if($get_nv){
                                                                 while ($result = $get_nv->fetch_assoc()) 
@@ -513,6 +535,7 @@ include 'sidebar.php';
                                                     </div>
                                                 </td>
                                                 <td class="text-center" title="SĐT : <?=$result['sdt']?>"><?=$result['chucvu']?></td>
+                                                
                                                 <td class="text-center">
                                                     <div class="badge badge-success">Completed</div>
                                                 </td>
@@ -528,9 +551,8 @@ include 'sidebar.php';
                                             </tbody>
                                         </table>
                                     </div>
-                                    <div class="d-block text-center card-footer">
-                                        
-                                        <button class="btn-wide btn btn-success">Xem chi tiết</button>
+                                    <div class="d-block text-center card-footer">                           
+                                        <button class="btn-wide btn btn-success" onclick="window.location = 'liststaff.php'">Xem chi tiết</button>
                                     </div>
                                 </div>
                             </div>

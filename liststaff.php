@@ -425,6 +425,7 @@ include 'sidebar.php';
                                     <div class="card-header">Danh sách NV
                                         <div class="btn-actions-pane-right">
                                             <div role="group" class="btn-group-sm btn-group">
+                                                <button class=" btn btn-info" onclick="window.location = 'newstaff.php'">Thêm nhân viên</button>
                                                 <button class="active btn btn-focus">Chia nhóm</button>
                                                 <button class="btn btn-focus">Chia ca làm việc</button>
                                             </div>
@@ -437,6 +438,7 @@ include 'sidebar.php';
                                                 <th class="text-center">#</th>
                                                 <th>Tên</th>
                                                 <th class="text-center">Chức vụ</th>
+                                                <th class="text-center">Ghi chú</th>
                                                 <th class="text-center">Status</th>
                                                 <th class="text-center">Actions</th>
                                             </tr>
@@ -475,11 +477,16 @@ include 'sidebar.php';
                                                     </div>
                                                 </td>
                                                 <td class="text-center" title="SĐT : <?=$result['sdt']?>"><?=$result['chucvu']?></td>
+                                                <td class="text-center" title="SĐT : <?=$result['sdt']?>"><?=$result['ghichu']?></td>
                                                 <td class="text-center">
                                                     <div class="badge badge-success">Completed</div>
                                                 </td>
                                                 <td class="text-center">
-                                                    <button type="button" id="PopoverCustomT-2" class="btn btn-danger btn-sm">Xóa</button>
+
+                                            
+                                                    <a style="color:red;" type="button" id="PopoverCustomT-2" onclick = "return confirm('Are you want to delete???')" 
+                                                   href="?delid=<?php echo $result['ten'] ?>"> Xóa</a>
+                                                   
                                                     <button type="button" id="PopoverCustomT-2" class="btn btn-primary btn-sm">Sửa</button>
                                                 </td>   
                                             </tr>
@@ -490,10 +497,27 @@ include 'sidebar.php';
                                             ?>
                                             </tbody>
                                         </table>
+
                                     </div>
                                     <div class="d-block text-center card-footer">
-                                        
-                                        <button class="btn-wide btn btn-success">Thêm nhân viên mới</button>
+                                    <button class="btn-wide btn btn-info"><?php
+                                                // gọi class category
+                                                   
+                                                if(!isset($_GET['delid']) || $_GET['delid'] == NULL){
+                                                    
+                                                    
+                                                }else {
+                                                    $id = $_GET['delid']; // Lấy catid trên host
+                                                    $delCat = $cs -> del_staff($id); // hàm check delete Name khi submit lên
+                                                }
+                                                
+                                                if(isset($delCat)){
+                                                    echo $delCat;
+                                                }
+                                             
+                                    ?></button>
+                                        <button class="btn-wide btn btn-primary" onclick="window.location = 'liststaff.php'">Refresh trang</button>
+                                        <button class="btn-wide btn btn-success" onclick="window.location = 'newstaff.php'">Thêm nhân viên mới</button>
                                     </div>
                                 </div>
                             </div>
