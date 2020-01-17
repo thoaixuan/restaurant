@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th1 13, 2020 lúc 11:55 AM
+-- Thời gian đã tạo: Th1 17, 2020 lúc 09:31 AM
 -- Phiên bản máy phục vụ: 10.4.6-MariaDB
 -- Phiên bản PHP: 7.3.8
 
@@ -44,7 +44,8 @@ INSERT INTO `lichlamviec` (`id`, `ca`, `ngaylam`, `chucvu`, `keyrandom`) VALUES
 (1, '9AM-4PM', '', 'Chạy bàn', ''),
 (2, '4PM-10PM', '', 'Chạy bàn', ''),
 (3, '10AM-4PM', '', 'Thu ngân ', ''),
-(4, '4PM-9PM', '', 'Thu ngân', '');
+(4, '4PM-9PM', '', 'Thu ngân', ''),
+(5, '0-0', 'Default', 'Default', 'Default');
 
 -- --------------------------------------------------------
 
@@ -54,7 +55,7 @@ INSERT INTO `lichlamviec` (`id`, `ca`, `ngaylam`, `chucvu`, `keyrandom`) VALUES
 
 CREATE TABLE `nhanvien` (
   `id` int(20) UNSIGNED NOT NULL,
-  `ten` varchar(60) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `ten` varchar(60) CHARACTER SET utf8 DEFAULT NULL,
   `sdt` varchar(60) COLLATE utf8_unicode_ci DEFAULT NULL,
   `chucvu` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `calamviec` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
@@ -79,7 +80,19 @@ INSERT INTO `nhanvien` (`id`, `ten`, `sdt`, `chucvu`, `calamviec`, `ghichu`, `co
 (16, 'Chủ Tịch', '6969', 'Chạy bàn', '9AM-4PM', '', ''),
 (17, 'Tester', '123', 'Chạy bàn', '4PM-10PM', '', ''),
 (18, 'Hà Hẫn Hờ', '114', 'Chạy bàn', '4PM-9PM', 'lề mề', ''),
-(19, 'Hùng Hầm Hố', '115', 'Chạy bàn', '4PM-9PM', '', '');
+(27, 'Túy', '+84', 'Chạy bàn', '9AM-4PM', '113', ''),
+(32, 'Đạt 09', '+84', 'Chạy bàn', '9AM-4PM', 'Lỳ lỳ', ''),
+(35, 'Đặng ÓC', '+84', 'Chạy bàn', '0-0', '', ''),
+(36, 'Hải Đại phú', '+84', 'Chạy bàn', '0-0', '', ''),
+(37, 'Thụn', '+84', 'Chạy bàn', '0-0', '', ''),
+(38, 'VL Hòn', '+84', 'Chạy bàn', '0-0', '', ''),
+(39, 'Gà Tre', '+84', 'Chạy bàn', '0-0', '', ''),
+(40, 'Hú Lê', '+84', 'Chạy bàn', '0-0', '', ''),
+(41, 'Tú Xuân', '+84', 'Chạy bàn', '0-0', '', ''),
+(42, 'Tú Bà', '+84', 'Chạy bàn', '0-0', '', ''),
+(43, 'Thúy', '+84', 'Chạy bàn', '0-0', '', ''),
+(44, 'Ngọc', '+84', 'Chạy bàn', '0-0', '', ''),
+(45, 'Lan', '+84', 'Chạy bàn', '0-0', '', '');
 
 -- --------------------------------------------------------
 
@@ -121,13 +134,13 @@ ALTER TABLE `nhanvien`
 -- AUTO_INCREMENT cho bảng `lichlamviec`
 --
 ALTER TABLE `lichlamviec`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT cho bảng `nhanvien`
 --
 ALTER TABLE `nhanvien`
-  MODIFY `id` int(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 
 --
 -- Các ràng buộc cho các bảng đã đổ
