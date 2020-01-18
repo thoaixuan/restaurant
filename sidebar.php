@@ -51,7 +51,7 @@ if( $check =="sortteam.php")
                                         <i class="metismenu-icon pe-7s-display2"></i>
                                         Chia nhóm
                                     </a>
-                                    <a href="dashboard-boxes.html">
+                                    <a href="sortshift.php">
                                         <i class="metismenu-icon pe-7s-note2"></i>
                                         Chia ca làm 
                                     </a>

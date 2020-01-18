@@ -125,5 +125,26 @@
 			}
 		}
 
+		//Sort team
+		public function SortTeam($ten)
+		{
+			$rd=rand(1,2);
+			if($ten==""){
+				$alert = "<span class='error'>Fields must be not empty</span>";
+				return $alert;
+			}else{
+				$query = "UPDATE nhanvien SET count='$rd'WHERE ten ='$ten'";
+				$result = $this->db->insert($query);
+				if($result){
+						$alert = "<span class='success'>Chia nhóm thành công</span>";
+						return $alert;
+				}else{
+						$alert = "<span class='error'>Lỗi</span>";
+						return $alert;
+				}
+				
+			}
+		}
+
 	}
 ?>

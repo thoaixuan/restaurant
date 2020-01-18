@@ -493,7 +493,7 @@ while($kq=$count->fetch_assoc())
                                         <div class="btn-actions-pane-right">
                                             <div role="group" class="btn-group-sm btn-group">
                                                 <button class="active btn btn-focus" onclick="window.location = 'liststaff.php'">Xem chi tiết</button>
-                                                <button class="btn btn-focus">Chia ca làm việc</button>
+                                                <button class="btn btn-focus" onclick="window.location = 'sortshift.php'">Chia ca làm việc</button>
                                             </div>
                                         </div>
                                     </div>

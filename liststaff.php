@@ -426,8 +426,8 @@ include 'sidebar.php';
                                         <div class="btn-actions-pane-right">
                                             <div role="group" class="btn-group-sm btn-group">
                                                 <button class=" btn btn-info" onclick="window.location = 'newstaff.php'">Thêm nhân viên</button>
-                                                <button class="active btn btn-focus">Chia nhóm</button>
-                                                <button class="btn btn-focus">Chia ca làm việc</button>
+                                                <button class="active btn btn-focus" onclick="window.location = 'sortteam.php'">Chia nhóm</button>
+                                                <button class="btn btn-focus" onclick="window.location = 'sortshift.php'">Chia ca làm việc</button>
                                             </div>
                                         </div>
                                     </div>

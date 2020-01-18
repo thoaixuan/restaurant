@@ -413,7 +413,7 @@ include 'sidebar.php';
                                                 <button class=" btn btn-success" onclick="window.location = 'sortteam.php?nhom=2'">Nhóm 2</button>
                                                 <button class=" btn btn-info" onclick="window.location = 'newstaff.php'">Thêm nhân viên</button>
                                                 <button class="btn btn-primary" onclick="window.print()">Save</button>
-                                                <button class="btn btn-focus">Chia ca làm việc</button>
+                                                <button class="btn btn-focus" onclick="window.location = 'sortshift.php'">Chia ca làm việc</button>
                                             </div>
                                         </div>
                                     </div>
@@ -423,6 +423,7 @@ include 'sidebar.php';
                                             <tr>  
                                                 <th class="text-center">Nhóm</th>
                                                 <th>Tên</th>
+                                                <th class="text-center">Chức vụ</th> 
                                                 <th class="text-center">Status</th> 
                                             </tr>
                                             </thead>
@@ -465,6 +466,10 @@ include 'sidebar.php';
                                                     </div>
                                                 </td>
                                                 <td class="text-center">
+                                                    <div class="badge badge-info"><?php if($kqt1['chucvu']!="Chạy bàn") echo $kqt1['chucvu']."<b style='color:red;'>*</b>";
+                                                    else echo $kqt1['chucvu'];  ?></div>
+                                                </td>
+                                                <td class="text-center">
                                                     <div class="badge badge-success">Completed</div>
                                                 </td>  
 
@@ -500,6 +505,10 @@ include 'sidebar.php';
                                                         </div>
                                                     </td>
                                                     <td class="text-center">
+                                                    <div class="badge badge-default"><?php if($kqt2['chucvu']!="Chạy bàn") echo $kqt2['chucvu']."<b style='color:red;'>*</b>";
+                                                    else echo $kqt2['chucvu'];  ?></div>
+                                                    </td>
+                                                    <td class="text-center">
                                                         <div class="badge badge-success">Completed</div>
                                                     </td>  
     
@@ -528,6 +537,10 @@ include 'sidebar.php';
                                                             </div>
                                                         </div>
                                                     </div>
+                                                </td>
+                                                <td class="text-center">
+                                                    <div class="badge badge-success"><?php if($kq['chucvu']!="Chạy bàn") echo $kq['chucvu']."<b style='color:red;'>*</b>";
+                                                    else echo $kq['chucvu'];  ?></div>
                                                 </td>
                                                 <td class="text-center">
                                                     <div class="badge badge-success">Completed</div>
