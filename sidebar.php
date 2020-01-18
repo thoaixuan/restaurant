@@ -15,7 +15,7 @@ if($check =="newstaff.php")
 {
 	$check3 ="mm-active";
 }
-if( $check =="matilde-otp.php")
+if( $check =="sortteam.php")
 {
 	$check4 ="mm-active";
 }
@@ -47,7 +47,7 @@ if( $check =="matilde-otp.php")
 
                                 <li class="app-sidebar__heading">Shift</li>
                                 <li>
-                                    <a href="dashboard-boxes.html">
+                                    <a href="sortteam.php" class="<?php echo $check4 ?>">
                                         <i class="metismenu-icon pe-7s-display2"></i>
                                         Chia nhóm
                                     </a>

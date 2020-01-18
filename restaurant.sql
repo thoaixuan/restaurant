@@ -2,10 +2,10 @@
 -- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
--- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th1 17, 2020 lúc 09:31 AM
--- Phiên bản máy phục vụ: 10.4.6-MariaDB
--- Phiên bản PHP: 7.3.8
+-- Host: 127.0.0.1
+-- Generation Time: Jan 18, 2020 at 03:56 AM
+-- Server version: 10.4.6-MariaDB
+-- PHP Version: 7.3.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,13 +19,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Cơ sở dữ liệu: `restaurant`
+-- Database: `restaurant`
 --
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `lichlamviec`
+-- Table structure for table `lichlamviec`
 --
 
 CREATE TABLE `lichlamviec` (
@@ -37,7 +37,7 @@ CREATE TABLE `lichlamviec` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `lichlamviec`
+-- Dumping data for table `lichlamviec`
 --
 
 INSERT INTO `lichlamviec` (`id`, `ca`, `ngaylam`, `chucvu`, `keyrandom`) VALUES
@@ -50,7 +50,7 @@ INSERT INTO `lichlamviec` (`id`, `ca`, `ngaylam`, `chucvu`, `keyrandom`) VALUES
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `nhanvien`
+-- Table structure for table `nhanvien`
 --
 
 CREATE TABLE `nhanvien` (
@@ -64,40 +64,40 @@ CREATE TABLE `nhanvien` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='nhan vien chay ban';
 
 --
--- Đang đổ dữ liệu cho bảng `nhanvien`
+-- Dumping data for table `nhanvien`
 --
 
 INSERT INTO `nhanvien` (`id`, `ten`, `sdt`, `chucvu`, `calamviec`, `ghichu`, `count`) VALUES
-(4, 'Thoại Thẫn Thờ', '0933496897', 'Chạy bàn', '9AM-4PM', '', ''),
-(7, 'Bé Tũn', '0123', 'Chạy bàn', '4PM-10PM', '', ''),
-(8, 'Bé Giun', '123', 'Thu ngân ', '10AM-4PM', '', ''),
-(9, 'A Đồng', '1123123', 'Chạy bàn', '9AM-4PM', '', ''),
-(10, 'B Đồng', '12312', 'Thu ngân ', '4PM-10PM', '', ''),
-(11, 'Hoàng ML', '115', 'Chạy bàn', '10AM-4PM', 'trừ lương', ''),
-(13, 'Tuấn Thộn', '2223', 'Chạy bàn', '4PM-9PM', '', ''),
-(14, 'Định', '113', 'Thu ngân ', '9AM-4PM', '', ''),
-(15, 'Hà Hớn Hở', '89898', 'Chạy bàn', '9AM-4PM', 'hay đi trễ', ''),
-(16, 'Chủ Tịch', '6969', 'Chạy bàn', '9AM-4PM', '', ''),
-(17, 'Tester', '123', 'Chạy bàn', '4PM-10PM', '', ''),
-(18, 'Hà Hẫn Hờ', '114', 'Chạy bàn', '4PM-9PM', 'lề mề', ''),
-(27, 'Túy', '+84', 'Chạy bàn', '9AM-4PM', '113', ''),
-(32, 'Đạt 09', '+84', 'Chạy bàn', '9AM-4PM', 'Lỳ lỳ', ''),
-(35, 'Đặng ÓC', '+84', 'Chạy bàn', '0-0', '', ''),
-(36, 'Hải Đại phú', '+84', 'Chạy bàn', '0-0', '', ''),
-(37, 'Thụn', '+84', 'Chạy bàn', '0-0', '', ''),
-(38, 'VL Hòn', '+84', 'Chạy bàn', '0-0', '', ''),
-(39, 'Gà Tre', '+84', 'Chạy bàn', '0-0', '', ''),
-(40, 'Hú Lê', '+84', 'Chạy bàn', '0-0', '', ''),
-(41, 'Tú Xuân', '+84', 'Chạy bàn', '0-0', '', ''),
-(42, 'Tú Bà', '+84', 'Chạy bàn', '0-0', '', ''),
-(43, 'Thúy', '+84', 'Chạy bàn', '0-0', '', ''),
-(44, 'Ngọc', '+84', 'Chạy bàn', '0-0', '', ''),
-(45, 'Lan', '+84', 'Chạy bàn', '0-0', '', '');
+(4, 'Thoại Thẫn Thờ', '0933496897', 'Chạy bàn', '9AM-4PM', '', '1'),
+(7, 'Bé Tũn', '0123', 'Chạy bàn', '4PM-10PM', '', '1'),
+(8, 'Bé Giun', '123', 'Thu ngân ', '10AM-4PM', '', '1'),
+(9, 'A Đồng', '1123123', 'Chạy bàn', '9AM-4PM', '', '1'),
+(10, 'B Đồng', '12312', 'Thu ngân ', '4PM-10PM', '', '2'),
+(11, 'Hoàng ML', '115', 'Chạy bàn', '10AM-4PM', 'trừ lương', '1'),
+(13, 'Tuấn Thộn', '2223', 'Chạy bàn', '4PM-9PM', '', '1'),
+(14, 'Định', '113', 'Thu ngân ', '9AM-4PM', '', '2'),
+(15, 'Hà Hớn Hở', '89898', 'Chạy bàn', '9AM-4PM', 'hay đi trễ', '1'),
+(16, 'Chủ Tịch', '6969', 'Chạy bàn', '9AM-4PM', '', '1'),
+(17, 'Tester', '123', 'Chạy bàn', '4PM-10PM', '', '1'),
+(18, 'Hà Hẫn Hờ', '114', 'Chạy bàn', '4PM-9PM', 'lề mề', '1'),
+(27, 'Túy', '+84', 'Chạy bàn', '9AM-4PM', '113', '1'),
+(32, 'Đạt 09', '+84', 'Chạy bàn', '9AM-4PM', 'Lỳ lỳ', '2'),
+(35, 'Đặng ÓC', '+84', 'Chạy bàn', '0-0', '', '2'),
+(36, 'Hải Đại phú', '+84', 'Chạy bàn', '0-0', '', '2'),
+(37, 'Thụn', '+84', 'Chạy bàn', '0-0', '', '2'),
+(38, 'VL Hòn', '+84', 'Chạy bàn', '0-0', '', '2'),
+(39, 'Gà Tre', '+84', 'Chạy bàn', '0-0', '', '2'),
+(40, 'Hú Lê', '+84', 'Chạy bàn', '0-0', '', '1'),
+(41, 'Tú Xuân', '+84', 'Chạy bàn', '0-0', '', '2'),
+(42, 'Tú Bà', '+84', 'Chạy bàn', '0-0', '', '1'),
+(43, 'Thúy', '+84', 'Chạy bàn', '0-0', '', '2'),
+(44, 'Ngọc', '+84', 'Chạy bàn', '0-0', '', '1'),
+(45, 'Lan', '+84', 'Chạy bàn', '0-0', '', '2');
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `temp`
+-- Table structure for table `temp`
 --
 
 CREATE TABLE `temp` (
@@ -107,11 +107,11 @@ CREATE TABLE `temp` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Chỉ mục cho các bảng đã đổ
+-- Indexes for dumped tables
 --
 
 --
--- Chỉ mục cho bảng `lichlamviec`
+-- Indexes for table `lichlamviec`
 --
 ALTER TABLE `lichlamviec`
   ADD PRIMARY KEY (`id`),
@@ -119,7 +119,7 @@ ALTER TABLE `lichlamviec`
   ADD KEY `chucvu` (`chucvu`);
 
 --
--- Chỉ mục cho bảng `nhanvien`
+-- Indexes for table `nhanvien`
 --
 ALTER TABLE `nhanvien`
   ADD PRIMARY KEY (`id`),
@@ -127,27 +127,27 @@ ALTER TABLE `nhanvien`
   ADD KEY `FK_nhanvien_lichlamviec_2` (`chucvu`);
 
 --
--- AUTO_INCREMENT cho các bảng đã đổ
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT cho bảng `lichlamviec`
+-- AUTO_INCREMENT for table `lichlamviec`
 --
 ALTER TABLE `lichlamviec`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT cho bảng `nhanvien`
+-- AUTO_INCREMENT for table `nhanvien`
 --
 ALTER TABLE `nhanvien`
   MODIFY `id` int(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 
 --
--- Các ràng buộc cho các bảng đã đổ
+-- Constraints for dumped tables
 --
 
 --
--- Các ràng buộc cho bảng `nhanvien`
+-- Constraints for table `nhanvien`
 --
 ALTER TABLE `nhanvien`
   ADD CONSTRAINT `FK_nhanvien_lichlamviec` FOREIGN KEY (`calamviec`) REFERENCES `lichlamviec` (`ca`),

@@ -67,6 +67,13 @@
 			return $result;
 		}
 
+		public function FillterStaff()
+		{
+			$query = "SELECT * FROM nhanvien ORDER BY count";	
+			$result = $this->db->select($query);
+			return $result;
+		}
+
 		public function CountStaffCashier()
 		{
 			$query = "SELECT COUNT(*) as nvtn FROM nhanvien where chucvu='Thu ngân'";	
