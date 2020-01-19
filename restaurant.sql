@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 18, 2020 at 03:56 AM
+-- Generation Time: Jan 19, 2020 at 01:51 PM
 -- Server version: 10.4.6-MariaDB
 -- PHP Version: 7.3.8
 
@@ -69,30 +69,34 @@ CREATE TABLE `nhanvien` (
 
 INSERT INTO `nhanvien` (`id`, `ten`, `sdt`, `chucvu`, `calamviec`, `ghichu`, `count`) VALUES
 (4, 'Thoại Thẫn Thờ', '0933496897', 'Chạy bàn', '9AM-4PM', '', '1'),
-(7, 'Bé Tũn', '0123', 'Chạy bàn', '4PM-10PM', '', '1'),
-(8, 'Bé Giun', '123', 'Thu ngân ', '10AM-4PM', '', '1'),
-(9, 'A Đồng', '1123123', 'Chạy bàn', '9AM-4PM', '', '1'),
-(10, 'B Đồng', '12312', 'Thu ngân ', '4PM-10PM', '', '2'),
-(11, 'Hoàng ML', '115', 'Chạy bàn', '10AM-4PM', 'trừ lương', '1'),
-(13, 'Tuấn Thộn', '2223', 'Chạy bàn', '4PM-9PM', '', '1'),
-(14, 'Định', '113', 'Thu ngân ', '9AM-4PM', '', '2'),
-(15, 'Hà Hớn Hở', '89898', 'Chạy bàn', '9AM-4PM', 'hay đi trễ', '1'),
-(16, 'Chủ Tịch', '6969', 'Chạy bàn', '9AM-4PM', '', '1'),
-(17, 'Tester', '123', 'Chạy bàn', '4PM-10PM', '', '1'),
-(18, 'Hà Hẫn Hờ', '114', 'Chạy bàn', '4PM-9PM', 'lề mề', '1'),
+(7, 'Bé Tũn', '0123', 'Chạy bàn', '4PM-10PM', '', '2'),
+(8, 'Bé Giun', '123', 'Thu ngân ', '4PM-9PM', '', '2'),
+(9, 'A Đồng', '1123123', 'Chạy bàn', '4PM-10PM', '', '1'),
+(10, 'B Đồng', '12312', 'Thu ngân ', '10AM-4PM', '', '2'),
+(11, 'Hoàng ML', '115', 'Chạy bàn', '9AM-4PM', 'trừ lương', '1'),
+(13, 'Tuấn Thộn', '2223', 'Chạy bàn', '9AM-4PM', '', '2'),
+(14, 'Định', '113', 'Thu ngân ', '4PM-9PM', '', '1'),
+(15, 'Hà Hớn Hở', '89898', 'Chạy bàn', '9AM-4PM', 'hay đi trễ', '2'),
+(16, 'Chủ Tịch', '6969', 'Chạy bàn', '9AM-4PM', '', '2'),
+(17, 'Tester', '123', 'Chạy bàn', '9AM-4PM', '', '2'),
+(18, 'Hà Hẫn Hờ', '114', 'Chạy bàn', '9AM-4PM', 'lề mề', '1'),
 (27, 'Túy', '+84', 'Chạy bàn', '9AM-4PM', '113', '1'),
-(32, 'Đạt 09', '+84', 'Chạy bàn', '9AM-4PM', 'Lỳ lỳ', '2'),
-(35, 'Đặng ÓC', '+84', 'Chạy bàn', '0-0', '', '2'),
-(36, 'Hải Đại phú', '+84', 'Chạy bàn', '0-0', '', '2'),
-(37, 'Thụn', '+84', 'Chạy bàn', '0-0', '', '2'),
-(38, 'VL Hòn', '+84', 'Chạy bàn', '0-0', '', '2'),
-(39, 'Gà Tre', '+84', 'Chạy bàn', '0-0', '', '2'),
-(40, 'Hú Lê', '+84', 'Chạy bàn', '0-0', '', '1'),
-(41, 'Tú Xuân', '+84', 'Chạy bàn', '0-0', '', '2'),
-(42, 'Tú Bà', '+84', 'Chạy bàn', '0-0', '', '1'),
-(43, 'Thúy', '+84', 'Chạy bàn', '0-0', '', '2'),
-(44, 'Ngọc', '+84', 'Chạy bàn', '0-0', '', '1'),
-(45, 'Lan', '+84', 'Chạy bàn', '0-0', '', '2');
+(32, 'Đạt 09', '+84', 'Chạy bàn', '4PM-10PM', 'Lỳ lỳ', '2'),
+(35, 'Đặng ÓC', '+84', 'Chạy bàn', '9AM-4PM', '', '1'),
+(36, 'Hải Đại phú', '+84', 'Chạy bàn', '9AM-4PM', '', '2'),
+(37, 'Thụn', '+84', 'Chạy bàn', '9AM-4PM', '', '1'),
+(38, 'VL Hòn', '+84', 'Chạy bàn', '9AM-4PM', '', '1'),
+(39, 'Gà Tre', '+84', 'Chạy bàn', '9AM-4PM', '', '1'),
+(40, 'Hú Lê', '+84', 'Chạy bàn', '4PM-10PM', '', '2'),
+(41, 'Tú Xuân', '+84', 'Chạy bàn', '4PM-10PM', '', '1'),
+(42, 'Tú Bà', '+84', 'Chạy bàn', '9AM-4PM', '', '2'),
+(43, 'Thúy', '+84', 'Chạy bàn', '4PM-10PM', '', '1'),
+(44, 'Ngọc', '+84', 'Chạy bàn', '4PM-10PM', '', '1'),
+(45, 'Lan', '+84', 'Chạy bàn', '4PM-10PM', '', '2'),
+(48, 'Ngân Thu', '113', 'Thu ngân ', '4PM-9PM', '11111', '1'),
+(49, 'OKE', '123', 'Thu ngân ', '10AM-4PM', '', '1'),
+(50, 'YES', '2222', 'Thu ngân ', '10AM-4PM', '', '1'),
+(53, '49 Thu ngân', '123', 'Thu ngân ', '10AM-4PM', '', '1');
 
 -- --------------------------------------------------------
 
@@ -140,7 +144,7 @@ ALTER TABLE `lichlamviec`
 -- AUTO_INCREMENT for table `nhanvien`
 --
 ALTER TABLE `nhanvien`
-  MODIFY `id` int(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
+  MODIFY `id` int(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
 
 --
 -- Constraints for dumped tables

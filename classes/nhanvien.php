@@ -54,6 +54,32 @@
 			
 			return $result;
 		}
+		public function show_shiftnhanvien($ca,$team)
+		{
+			
+			$query = "SELECT * FROM nhanvien where calamviec ='$ca' && count='$team' ORDER BY RAND() limit 2";	
+			$result = $this->db->select($query);
+			
+			return $result;
+		}
+		public function show_shiftCashier($ca,$team)
+		{
+			
+			$query = "SELECT * FROM nhanvien where chucvu ='Thu ngân' && calamviec='$ca' && count='$team' ORDER BY RAND() limit 1";	
+			$result = $this->db->select($query);
+			
+			return $result;
+		}
+
+
+		public function Fillter_Team($team)
+		{
+			
+			$query = "SELECT * FROM nhanvien WHERE count ='$team'";	
+			$result = $this->db->select($query);
+			
+			return $result;
+		}
 		public function CountStaff()
 		{
 			$query = "SELECT COUNT(*) as nv FROM nhanvien";	
@@ -137,6 +163,53 @@
 				$result = $this->db->insert($query);
 				if($result){
 						$alert = "<span class='success'>Chia nhóm thành công</span>";
+						return $alert;
+				}else{
+						$alert = "<span class='error'>Lỗi</span>";
+						return $alert;
+				}
+				
+			}
+		}
+
+		//Sort team
+		public function SortShiftNV($team,$ten)
+		{
+			//
+			$items = array('9AM-4PM', '4PM-10PM');
+			$rd=$items[array_rand($items)];
+			//
+			if($team==""){
+				$alert = "<span class='error'>Fields must be not empty</span>";
+				return $alert;
+			}else{
+				$query = "UPDATE nhanvien SET calamviec='$rd'  WHERE count ='$team' && chucvu='Chạy bàn' && ten ='$ten'";
+				$result = $this->db->insert($query);
+				if($result){
+						$alert = "<span class='success'>Chia ca thành công</span>";
+						return $alert;
+				}else{
+						$alert = "<span class='error'>Lỗi</span>";
+						return $alert;
+				}
+				
+			}
+		}
+		//Sort Cashier
+		public function SortShiftCashier($team,$ten)
+		{
+			//
+			$items = array('10AM-4PM', '4PM-9PM');
+			$rd=$items[array_rand($items)];
+			//
+			if($team==""){
+				$alert = "<span class='error'>Fields must be not empty</span>";
+				return $alert;
+			}else{
+				$query = "UPDATE nhanvien SET calamviec='$rd'  WHERE count ='$team' && chucvu='Thu ngân' && ten ='$ten'";
+				$result = $this->db->insert($query);
+				if($result){
+						$alert = "<span class='success'>Chia ca thành công</span>";
 						return $alert;
 				}else{
 						$alert = "<span class='error'>Lỗi</span>";

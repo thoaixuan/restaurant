@@ -1,10 +1,6 @@
 # restaurant
-Create database
-Create UI   
-Model + Class
-
--> To do 
-+ Giao diện chia nhóm
-+ Giao diện chia ca làm việc
-+ Chia ca
-+ Chia nhóm
+Done project
++ Chia ngẫu nhiên 2 nv chạy bàn + 1 thu ngân
++ Quản lý nhân viên
++ Sắp ngẫu nhiên 2 nhóm
++ Chia ca làm việc

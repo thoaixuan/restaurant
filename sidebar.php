@@ -19,7 +19,10 @@ if( $check =="sortteam.php")
 {
 	$check4 ="mm-active";
 }
-
+if( $check =="sortshift.php")
+{
+	$check5 ="mm-active";
+}
 ?>
 <div class="scrollbar-sidebar">
                         <div class="app-sidebar__inner">
@@ -51,7 +54,7 @@ if( $check =="sortteam.php")
                                         <i class="metismenu-icon pe-7s-display2"></i>
                                         Chia nhóm
                                     </a>
-                                    <a href="sortshift.php">
+                                    <a href="sortshift.php" class="<?php echo $check5 ?>">
                                         <i class="metismenu-icon pe-7s-note2"></i>
                                         Chia ca làm 
                                     </a>
