@@ -504,7 +504,7 @@ while($kq=$count->fetch_assoc())
                                                 <th class="text-center">#</th>
                                                 <th>Tên</th>
                                                 <th class="text-center">Chức vụ</th>   
-                                                <th class="text-center">Status</th>
+                                                <th class="text-center">Note</th>
                                                 <th class="text-center">Actions</th>
                                             </tr>
                                             </thead>
@@ -537,7 +537,7 @@ while($kq=$count->fetch_assoc())
                                                 <td class="text-center" title="SĐT : <?=$result['sdt']?>"><?=$result['chucvu']?></td>
                                                 
                                                 <td class="text-center">
-                                                    <div class="badge badge-success">Completed</div>
+                                                    <div class="badge badge-default"><?=$result['ghichu']?></div>
                                                 </td>
                                                 <td class="text-center">
                                                     <button type="button" id="PopoverCustomT-2" class="btn btn-primary btn-sm">Details</button>

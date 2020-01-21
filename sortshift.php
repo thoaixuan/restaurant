@@ -412,7 +412,7 @@ include 'helpers/slug.php';
                     <div class="row">
                         <div class="col-md-12">
                             <div class="main-card mb-3 card">
-                                <div class="card-header">Chia nhóm NV
+                                <div class="card-header">Chia GP
                                     <div class="btn-actions-pane-right">
                                         <div role="group" class="btn-group-sm btn-group">
                                             <button class=" btn btn-focus" onclick="window.location = 'sortteam.php?nhom=1'">Nhóm 1</button>
@@ -428,11 +428,12 @@ include 'helpers/slug.php';
                                         <form class="needs-validation" validate action="rdshift.php" method="POST" enctype="multipart/form-data">
                                             <div class="form-row">
                                                 <div class="col-md-4 mb-3">
-                                                    <label for="validationTooltip01">Select Team</label>
+                                                    <label for="validationTooltip01">Select GP</label>
                                                     <select class="form-control" name="team" id="validationTooltip01">
                                                         <option selected>1</option>
                                                         <option>2</option>
                                                     </select>
+                                                    
                                                     <div class="valid-tooltip">
                                                         Looks good!
                                                     </div>
@@ -440,23 +441,66 @@ include 'helpers/slug.php';
                                                 </div>
 
                                             </div>
-
-
                                         </form>
+                                        <div id="MyClockDisplay" class="clock" onload="showTime()"></div>
+                                        <script>
+                                        function showTime(){
+    var date = new Date();
+    var h = date.getHours(); // 0 - 23
+    var m = date.getMinutes(); // 0 - 59
+    var s = date.getSeconds(); // 0 - 59
+    var session = "AM";
+    
+    if(h == 0){
+        h = 12;
+    }
+    
+    if(h > 12){
+        h = h - 12;
+        session = "PM";
+    }
+    
+    h = (h < 10) ? "0" + h : h;
+    m = (m < 10) ? "0" + m : m;
+    s = (s < 10) ? "0" + s : s;
+    
+    var time = h + ":" + m + ":" + s + " " + session;
+    document.getElementById("MyClockDisplay").innerText = time;
+    document.getElementById("MyClockDisplay").textContent = time;
+    
+    setTimeout(showTime, 1000);
+    
+}
+
+showTime();
+                                        </script>  
                                         <button class="mb-2 mr-2 btn btn-info" onclick="window.location = 'sortshift.php'">Refresh trang<span class="badge badge-light">NEW</span></button>
+                                        <button class="mb-2 mr-2 btn btn-default">
+                                       <?php
+                                            $date = getdate();
+
+                                        
+                                            echo "Thứ: ".$date['weekday']." >";
+                                            echo "Ngày: ".$date['mday']." /";
+                                            echo "Tháng: ".$date['mon']."/";
+                                            echo "Năm: ".$date['year']."<br/>"; 
+                                        ?>
+                                        </button>
                                     </div>
+                                    
                                     <div class="col-lg-12">
                                         <div class="main-card mb-3 card">
                                             <div class="card-body">
-                                                <h5 class="card-title">Shift</h5>
+                                                <h5 class="card-title">Shift </h5>
+                                                
                                                 <table class="mb-0 table table-striped">
                                                     <thead>
                                                         <tr>
                                                             <th>Team 1</th>
-                                                            <th>9AM-4PM</th>
-                                                            <th>4PM-10PM</th>
-                                                            <th>10AM-4PM*</th>
-                                                            <th>4PM-9PM*</th>
+                                                            <th>Morning Shift </th>
+                                                            <th>Night Shift </th>
+                                                            <th>Cashier Morning Shift</th>
+                                                            <th>Cashier Night Shift</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
@@ -810,10 +854,10 @@ include 'helpers/slug.php';
                                                     <thead>
                                                         <tr style="color:blue;">
                                                             <th>Team 2</th>
-                                                            <th>9AM-4PM</th>
-                                                            <th>4PM-10PM</th>
-                                                            <th>10AM-4PM*</th>
-                                                            <th>4PM-9PM*</th>
+                                                            <th>Morning Shift </th>
+                                                            <th>Night Shift </th>
+                                                            <th>Cashier Morning Shift</th>
+                                                            <th>Cashier Night Shift</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>

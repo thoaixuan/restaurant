@@ -409,8 +409,8 @@ include 'sidebar.php';
                                     <div class="card-header">Chia nhóm NV
                                         <div class="btn-actions-pane-right">
                                             <div role="group" class="btn-group-sm btn-group">
-                                                <button class=" btn btn-focus" onclick="window.location = 'sortteam.php?nhom=1'">Nhóm 1</button>
-                                                <button class=" btn btn-success" onclick="window.location = 'sortteam.php?nhom=2'">Nhóm 2</button>
+                                                <button class=" btn btn-focus" onclick="window.location = 'sortteam.php?nhom=1'">GP 1</button>
+                                                <button class=" btn btn-success" onclick="window.location = 'sortteam.php?nhom=2'">GP 2</button>
                                                 <button class=" btn btn-info" onclick="window.location = 'newstaff.php'">Thêm nhân viên</button>
                                                 <button class="btn btn-primary" onclick="window.print()">Save</button>
                                                 <button class="btn btn-focus" onclick="window.location = 'sortshift.php'">Chia ca làm việc</button>
@@ -424,7 +424,7 @@ include 'sidebar.php';
                                                 <th class="text-center">Nhóm</th>
                                                 <th>Tên</th>
                                                 <th class="text-center">Chức vụ</th> 
-                                                <th class="text-center">Status</th> 
+                                                <th class="text-center">Note</th> 
                                             </tr>
                                             </thead>
                                             <tbody>
@@ -441,7 +441,7 @@ include 'sidebar.php';
                                                 if($getteam)
                                                 {
                                                     if($nhom==1){
-                                                        echo "<h4>Nhóm 1</h4>";
+                                                        echo "<h4>GP 1</h4>";
                                                         $z=0;
                                                         while($kqt1= $getteam->fetch_assoc())
                                                     {
@@ -468,9 +468,11 @@ include 'sidebar.php';
                                                 <td class="text-center">
                                                     <div class="badge badge-info"><?php if($kqt1['chucvu']!="Chạy bàn") echo $kqt1['chucvu']."<b style='color:red;'>*</b>";
                                                     else echo $kqt1['chucvu'];  ?></div>
+                                                    
                                                 </td>
+                                                
                                                 <td class="text-center">
-                                                    <div class="badge badge-success">Completed</div>
+                                                    <div class="badge badge-default"><?=$kqt1['ghichu']?></div>
                                                 </td>  
 
                                             </tr>
@@ -509,7 +511,7 @@ include 'sidebar.php';
                                                     else echo $kqt2['chucvu'];  ?></div>
                                                     </td>
                                                     <td class="text-center">
-                                                        <div class="badge badge-success">Completed</div>
+                                                        <div class="badge badge-focus"><?=$kqt2['ghichu']?></div>
                                                     </td>  
     
                                                 </tr>
@@ -532,18 +534,18 @@ include 'sidebar.php';
                                                                 </div>
                                                             </div>
                                                             <div class="widget-content-left flex2">
-                                                                <div class="widget-heading"><?=$kq['ten']?></div>
+                                                                <div class="widget-heading"><?=$kq['ten']?><a href="formchange.php?name=<?=$kq['ten']?>">    >>Change Shift or position</a></div>
                                                                 <div class="widget-subheading opacity-7">Phone : <?=$kq['sdt']?></div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </td>
                                                 <td class="text-center">
-                                                    <div class="badge badge-success"><?php if($kq['chucvu']!="Chạy bàn") echo $kq['chucvu']."<b style='color:red;'>*</b>";
-                                                    else echo $kq['chucvu'];  ?></div>
+                                                    <div class="badge badge-warning"><?php if($kq['chucvu']!="Chạy bàn") echo 'Cashier'."<b style='color:red;'>*</b>";
+                                                    else echo 'Server';  ?></div>
                                                 </td>
                                                 <td class="text-center">
-                                                    <div class="badge badge-success">Completed</div>
+                                                    <div class="badge badge-default"><?=$kq['ghichu']?></div>
                                                 </td>  
 
                                             </tr>
@@ -562,7 +564,7 @@ include 'sidebar.php';
                                         if($a !=0)
                                         {
                                             ?>
-                                            <button class="mb-2 mr-2 btn btn-primary" onclick="window.location = 'random.php?key=<?=$a;?>'">Chia nhóm<span class="badge badge-light">NEW</span></button>
+                                            <button class="mb-2 mr-2 btn btn-primary" onclick="window.location = 'random.php?key=<?=$a;?>'">Randome GP 1 || GP 2<span class="badge badge-light">NEW</span></button>
                                             <?php
                                         }
                                         ?>

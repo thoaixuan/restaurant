@@ -7,7 +7,8 @@ include 'helpers/slug.php';
 ?>
 <!doctype html>
 <html lang="vi">
-<?php include 'head.php';?>
+<?php include 'head.php'; ?>
+
 <body>
     <div class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header">
         <div class="app-header header-shadow">
@@ -40,7 +41,8 @@ include 'helpers/slug.php';
                         </span>
                     </button>
                 </span>
-            </div>    <div class="app-header__content">
+            </div>
+            <div class="app-header__content">
                 <div class="app-header-left">
                     <div class="search-wrapper">
                         <div class="input-holder">
@@ -49,7 +51,7 @@ include 'helpers/slug.php';
                         </div>
                         <button class="close"></button>
                     </div>
-        </div>
+                </div>
                 <div class="app-header-right">
                     <div class="header-btn-lg pr-0">
                         <div class="widget-content p-0">
@@ -85,9 +87,11 @@ include 'helpers/slug.php';
                                 </div>
                             </div>
                         </div>
-                    </div>        </div>
+                    </div>
+                </div>
             </div>
-        </div>        <div class="ui-theme-settings">
+        </div>
+        <div class="ui-theme-settings">
             <button type="button" id="TooltipDemo" class="btn-open-options btn btn-warning">
                 <i class="fa fa-cog fa-w-16 fa-spin fa-2x"></i>
             </button>
@@ -365,154 +369,159 @@ include 'helpers/slug.php';
                     </div>
                 </div>
             </div>
-        </div>        <div class="app-main">
-                <div class="app-sidebar sidebar-shadow">
-                    <div class="app-header__logo">
-                        <div class="logo-src"></div>
-                        <div class="header__pane ml-auto">
-                            <div>
-                                <button type="button" class="hamburger close-sidebar-btn hamburger--elastic" data-class="closed-sidebar">
-                                    <span class="hamburger-box">
-                                        <span class="hamburger-inner"></span>
-                                    </span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="app-header__mobile-menu">
+        </div>
+        <div class="app-main">
+            <div class="app-sidebar sidebar-shadow">
+                <div class="app-header__logo">
+                    <div class="logo-src"></div>
+                    <div class="header__pane ml-auto">
                         <div>
-                            <button type="button" class="hamburger hamburger--elastic mobile-toggle-nav">
+                            <button type="button" class="hamburger close-sidebar-btn hamburger--elastic" data-class="closed-sidebar">
                                 <span class="hamburger-box">
                                     <span class="hamburger-inner"></span>
                                 </span>
                             </button>
                         </div>
                     </div>
-                    <div class="app-header__menu">
-                        <span>
-                            <button type="button" class="btn-icon btn-icon-only btn btn-primary btn-sm mobile-toggle-header-nav">
-                                <span class="btn-icon-wrapper">
-                                    <i class="fa fa-ellipsis-v fa-w-6"></i>
-                                </span>
-                            </button>
-                        </span>
-                    </div>    
-<?php 
-include 'sidebar.php';
-?>
-                </div>    <div class="app-main__outer">
-                    <div class="app-main__inner">
-                                 
-                        
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="main-card mb-3 card">
-                                    <div class="card-header">Danh sách NV
-                                        <div class="btn-actions-pane-right">
-                                            <div role="group" class="btn-group-sm btn-group">
-                                                <button class=" btn btn-info" onclick="window.location = 'newstaff.php'">Thêm nhân viên</button>
-                                                <button class="active btn btn-focus" onclick="window.location = 'sortteam.php'">Chia GP</button>
-                                                <button class="btn btn-focus" onclick="window.location = 'sortshift.php'">Chia ca làm việc</button>
+                </div>
+                <div class="app-header__mobile-menu">
+                    <div>
+                        <button type="button" class="hamburger hamburger--elastic mobile-toggle-nav">
+                            <span class="hamburger-box">
+                                <span class="hamburger-inner"></span>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+                <div class="app-header__menu">
+                    <span>
+                        <button type="button" class="btn-icon btn-icon-only btn btn-primary btn-sm mobile-toggle-header-nav">
+                            <span class="btn-icon-wrapper">
+                                <i class="fa fa-ellipsis-v fa-w-6"></i>
+                            </span>
+                        </button>
+                    </span>
+                </div>
+                <?php
+                include 'sidebar.php';
+                $filepath = realpath(dirname(__FILE__));
+                include_once($filepath . '/classes/nhanvien.php');
+                include_once($filepath . '/../helpers/format.php');
+                //
+                //PHP OOP
+                $cs = new nhanvien();
+                $ten = $_GET['name'];
+                $info = $cs->Find_staff($ten);
+
+                ?>
+            </div>
+            <div class="app-main__outer">
+                <div class="app-main__inner">
+                    <div class="main-card mb-3 card">
+                        <div class="card-body">
+                            <h5 class="card-title">Change : <?= $ten; ?></h5>
+                            <?php
+
+                            //
+                            $nv = new nhanvien();
+                            if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
+                                // LẤY DỮ LIỆU TỪ PHƯƠNG THỨC Ở FORM POST
+
+                                $insertNV = $nv->ChangeAll($_POST, $_FILES); // hàm check Name khi submit lên
+                            }
+                            //
+                            if (isset($insertNV)) {
+                                echo $insertNV;
+                            }
+
+
+                            ?>
+                            <form class="needs-validation" validate action="formchange.php" method="POST" enctype="multipart/form-data">
+                                <div class="form-row">
+                                    <div class="col-md-4 mb-3">
+                                        <label for="validationTooltip01">Tên</label>
+                                        <input type="text" readonly class="form-control" name="ten" value="<?php echo $ten; ?>">
+                                        <div class="valid-tooltip">
+                                            Looks good!
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <label for="validationTooltip02">Phone</label>
+                                        <input type="text" class="form-control" name="sdt" id="validationTooltip02" placeholder="Phone" value="<?php $result = $info->fetch_assoc();
+                                                                                                                                                echo $result['sdt']; ?>">
+                                        <div class="valid-tooltip">
+                                            Looks good!
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <label for="validationTooltip02">Ca làm</label>
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <select class="input-group-text" name="calam" require>
+                                                    
+                                                        <option>10AM-4PM</option>
+                                                        <option>4PM-9PM</option>
+                                                        <option title="Server">9AM-4PM</option>
+                                                        <option title="Server">4PM-10PM</option>
+                                                </select>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="table-responsive">
-                                        <table class="align-middle mb-0 table table-borderless table-striped table-hover">
-                                            <thead>
-                                            <tr>
-                                                <th class="text-center">#</th>
-                                                <th>Tên</th>
-                                                <th class="text-center">Chức vụ</th>
-                                                <th class="text-center">Ghi chú</th>
-                                                
-                                                <th class="text-center">Actions</th>
-                                            </tr>
-                                            </thead>
-                                            <tbody>
-                                            <?php
-
-                                            $filepath = realpath(dirname(__FILE__));
-                                            include_once ($filepath.'/classes/nhanvien.php');
-                                            include_once ($filepath.'/../helpers/format.php');
-                                            //
-                                            //PHP OOP
-                                            $i=1;
-                                            $cs = new nhanvien();   
-                                            $get_nv = $cs->show_nhanvien();
-                                                            if($get_nv){
-                                                                while ($result = $get_nv->fetch_assoc()) 
-                                                                {
-                                                                              
-                                            ?>
-                                            <tr>
-                                                <td class="text-center text-muted"><?=$i++?></td>
-                                                <td>
-                                                    <div class="widget-content p-0">
-                                                        <div class="widget-content-wrapper">
-                                                            <div class="widget-content-left mr-3">
-                                                                <div class="widget-content-left">
-                                                                    <img width="40" class="rounded-circle" src="assets/images/avatars/images.png" alt="">
-                                                                </div>
-                                                            </div>
-                                                            <div class="widget-content-left flex2">
-                                                                <div class="widget-heading"><?=$result['ten']?></div>
-                                                                <div class="widget-subheading opacity-7">Phone : <?=$result['sdt']?></div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td class="text-center" title="SĐT : <?=$result['sdt']?>"><?php
-                                                if($result['chucvu']!="Chạy bàn") echo 'Cashier'."<b style='color:red;'>*</b>";
-                                                else echo 'Server';
-                                                ?></td>
-                                                <td class="text-center" title="SĐT : <?=$result['sdt']?>"><?=$result['ghichu']?></td>
-                                                
-                                                <td class="text-center">
-
-                                            
-                                                    <a style="color:red;" type="button" id="PopoverCustomT-2" onclick = "return confirm('Are you want to delete???')" 
-                                                   href="?delid=<?php echo $result['ten'] ?>"> Xóa</a>
-                                                   
-                                                    <button onclick="window.location = 'formchange.php?name=<?=$result['ten'] ?>'" type="button" id="PopoverCustomT-2" class="btn btn-primary btn-sm">Sửa</button>
-                                                </td>   
-                                            </tr>
-                                            <?php 
-                                             }
-                                            }
-                                            else{echo "Lỗi";}
-                                            ?>
-                                            </tbody>
-                                        </table>
-
+                                    <div class="col-md-4 mb-3">
+                                        <label for="validationTooltipUsername">GP</label>
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <select class="input-group-text" name="gp" require>
+                                                    <option <?php if ($result['count'] == "1") {
+                                                                echo "selected";
+                                                            } ?>>1</option>
+                                                    <option <?php if ($result['count'] == "2") {
+                                                                echo "selected";
+                                                            } ?>>2</option>
+                                                </select>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="d-block text-center card-footer">
-                                    <button class="btn-wide btn btn-info"><?php
-                                                // gọi class category
-                                                   
-                                                if(!isset($_GET['delid']) || $_GET['delid'] == NULL){
-                                                    
-                                                    
-                                                }else {
-                                                    $id = $_GET['delid']; // Lấy catid trên host
-                                                    $delCat = $cs -> del_staff($id); // hàm check delete Name khi submit lên
-                                                }
-                                                
-                                                if(isset($delCat)){
-                                                    echo $delCat;
-                                                }
-                                             
-                                    ?></button>
-                                        <button class="btn-wide btn btn-primary" onclick="window.location = 'liststaff.php'">Refresh trang</button>
-                                        <button class="btn-wide btn btn-success" onclick="window.location = 'newstaff.php'">Thêm nhân viên mới</button>
+                                    <div class="col-md-4 mb-3">
+                                        <label for="validationTooltipUsername">Chức vụ</label>
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <select class="input-group-text" name="chucvu" id="validationTooltipUsernamePrepend" require>
+                                                    <option <?php if ($result['chucvu'] == "Thu ngân") {
+                                                                echo "selected";
+                                                            } ?>>Thu ngân</option>
+                                                    <option <?php if ($result['chucvu'] == "Chạy bàn") {
+                                                                echo "selected";
+                                                            } ?>>Chạy bàn</option>
+                                                </select>
+                                            </div>
+
+                                            <div class="invalid-tooltip">
+                                                Vui lòng chọn chức vụ.
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                                <div class="form-row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="validationTooltip03">Ghi chú</label>
+                                        <input type="text" name="note" class="form-control" id="validationTooltip03" value="<?= $result['ghichu'] ?>">
+                                        <div class="invalid-tooltip">
+                                            Please provide a valid note.
+                                        </div>
+                                    </div>
+                                </div>
+                                <input class="btn btn-primary" name="submit" type="submit" value="Change Info">
+                            </form>
                         </div>
-
                     </div>
-                       </div>
-                <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
+
+                </div>
+            </div>
+            <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
         </div>
     </div>
-<script type="text/javascript" src="./assets/scripts/main.js"></script></body>
+    <script type="text/javascript" src="./assets/scripts/main.js"></script>
+</body>
+
 </html>

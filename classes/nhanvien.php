@@ -54,6 +54,14 @@
 			
 			return $result;
 		}
+		public function Find_staff($ten)
+		{
+			
+			$query = "SELECT * FROM nhanvien where ten='$ten'";	
+			$result = $this->db->select($query);
+			
+			return $result;
+		}
 		public function show_shiftnhanvien($ca,$team)
 		{
 			
@@ -172,7 +180,7 @@
 			}
 		}
 
-		//Sort team
+		//Sort shift
 		public function SortShiftNV($team,$ten)
 		{
 			//
@@ -217,6 +225,32 @@
 				}
 				
 			}
+		}
+		public function ChangeAll($date,$files)
+		{
+			$ten = mysqli_real_escape_string($this->db->link, $date['ten']);
+			$sdt = mysqli_real_escape_string($this->db->link, $date['sdt']);
+			$calam = mysqli_real_escape_string($this->db->link, $date['calam']);
+			$gp = mysqli_real_escape_string($this->db->link, $date['gp']);
+			$chucvu = mysqli_real_escape_string($this->db->link, $date['chucvu']);
+			$note = mysqli_real_escape_string($this->db->link, $date['note']);
+			
+			if($sdt == "" || $chucvu == "" || $calam == "" || $gp == ""){
+				$alert = "<span class='error'>Fields must be not empty</span>";
+				return $alert;
+			}else{
+				$query = "UPDATE nhanvien SET sdt='$sdt',calamviec='$calam',count='$gp',chucvu='$chucvu',ghichu='$note' WHERE ten ='$ten'";
+				$result = $this->db->insert($query);
+				if($result){
+						$alert = "<span style='color:lightgreen;font-weight:bold;'>Change success</span>";
+						return $alert;
+				}else{
+						$alert = "<span class='error'>Error! Please Check again field</span>";
+						return $alert;
+				}
+				
+			}
+			
 		}
 
 	}

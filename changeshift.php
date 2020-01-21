@@ -411,8 +411,8 @@ include 'sidebar.php';
                                         <div class="btn-actions-pane-right">
                                             <div role="group" class="btn-group-sm btn-group">
                                                 <button class=" btn btn-info" onclick="window.location = 'newstaff.php'">Thêm nhân viên</button>
-                                                <button class="active btn btn-focus" onclick="window.location = 'sortteam.php'">Chia GP</button>
-                                                <button class="btn btn-focus" onclick="window.location = 'sortshift.php'">Chia ca làm việc</button>
+                                                <button class="active btn btn-focus" onclick="window.location = 'sortteam.php'">Randome GP</button>
+                                                <button class="btn btn-focus" onclick="window.location = 'sortshift.php'">Random Shift</button>
                                             </div>
                                         </div>
                                     </div>
@@ -468,12 +468,7 @@ include 'sidebar.php';
                                                 <td class="text-center" title="SĐT : <?=$result['sdt']?>"><?=$result['ghichu']?></td>
                                                 
                                                 <td class="text-center">
-
-                                            
-                                                    <a style="color:red;" type="button" id="PopoverCustomT-2" onclick = "return confirm('Are you want to delete???')" 
-                                                   href="?delid=<?php echo $result['ten'] ?>"> Xóa</a>
-                                                   
-                                                    <button onclick="window.location = 'formchange.php?name=<?=$result['ten'] ?>'" type="button" id="PopoverCustomT-2" class="btn btn-primary btn-sm">Sửa</button>
+                                                    <button onclick="window.location = 'formchange.php?name=<?=$result['ten'] ?>'" type="button" id="PopoverCustomT-2" class="btn btn-primary btn-sm">Change Shift or position</button>
                                                 </td>   
                                             </tr>
                                             <?php 
@@ -486,22 +481,6 @@ include 'sidebar.php';
 
                                     </div>
                                     <div class="d-block text-center card-footer">
-                                    <button class="btn-wide btn btn-info"><?php
-                                                // gọi class category
-                                                   
-                                                if(!isset($_GET['delid']) || $_GET['delid'] == NULL){
-                                                    
-                                                    
-                                                }else {
-                                                    $id = $_GET['delid']; // Lấy catid trên host
-                                                    $delCat = $cs -> del_staff($id); // hàm check delete Name khi submit lên
-                                                }
-                                                
-                                                if(isset($delCat)){
-                                                    echo $delCat;
-                                                }
-                                             
-                                    ?></button>
                                         <button class="btn-wide btn btn-primary" onclick="window.location = 'liststaff.php'">Refresh trang</button>
                                         <button class="btn-wide btn btn-success" onclick="window.location = 'newstaff.php'">Thêm nhân viên mới</button>
                                     </div>
