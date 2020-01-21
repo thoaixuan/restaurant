@@ -409,19 +409,30 @@ include 'helpers/slug.php';
             <div class="app-main__outer">
                 <div class="app-main__inner">
 
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+                    <script src="assets/scripts/screen.js" type="text/javascript"></script>
+                    <button class=" btn btn-focus" onclick="report()">Chụp màn hình</button>
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">
+                        View
+                    </button>
                     <div class="row">
                         <div class="col-md-12">
                             <div class="main-card mb-3 card">
                                 <div class="card-header">Chia GP
                                     <div class="btn-actions-pane-right">
                                         <div role="group" class="btn-group-sm btn-group">
-                                            <button class=" btn btn-focus" onclick="window.location = 'sortteam.php?nhom=1'">Nhóm 1</button>
-                                            <button class=" btn btn-success" onclick="window.location = 'sortteam.php?nhom=2'">Nhóm 2</button>
+                                            <button class=" btn btn-focus" onclick="window.location = 'sortteam.php?nhom=1'">GP 1</button>
+                                            <button class=" btn btn-success" onclick="window.location = 'sortteam.php?nhom=2'">GP 2</button>
                                             <button class=" btn btn-info" onclick="window.location = 'newstaff.php'">Thêm nhân viên</button>
                                             <button class="btn btn-primary" onclick="window.print()">Save</button>
+
                                         </div>
+
                                     </div>
+
                                 </div>
+                                <div style="text-align:right;">*Note: Đừng quên nhấn nút SAVE (Don't forget click button Save)</div>
                                 <div class="table-responsive">
 
                                     <div class="d-block text-center card-footer">
@@ -433,7 +444,7 @@ include 'helpers/slug.php';
                                                         <option selected>1</option>
                                                         <option>2</option>
                                                     </select>
-                                                    
+
                                                     <div class="valid-tooltip">
                                                         Looks good!
                                                     </div>
@@ -444,59 +455,59 @@ include 'helpers/slug.php';
                                         </form>
                                         <div id="MyClockDisplay" class="clock" onload="showTime()"></div>
                                         <script>
-                                        function showTime(){
-    var date = new Date();
-    var h = date.getHours(); // 0 - 23
-    var m = date.getMinutes(); // 0 - 59
-    var s = date.getSeconds(); // 0 - 59
-    var session = "AM";
-    
-    if(h == 0){
-        h = 12;
-    }
-    
-    if(h > 12){
-        h = h - 12;
-        session = "PM";
-    }
-    
-    h = (h < 10) ? "0" + h : h;
-    m = (m < 10) ? "0" + m : m;
-    s = (s < 10) ? "0" + s : s;
-    
-    var time = h + ":" + m + ":" + s + " " + session;
-    document.getElementById("MyClockDisplay").innerText = time;
-    document.getElementById("MyClockDisplay").textContent = time;
-    
-    setTimeout(showTime, 1000);
-    
-}
+                                            function showTime() {
+                                                var date = new Date();
+                                                var h = date.getHours(); // 0 - 23
+                                                var m = date.getMinutes(); // 0 - 59
+                                                var s = date.getSeconds(); // 0 - 59
+                                                var session = "AM";
 
-showTime();
-                                        </script>  
+                                                if (h == 0) {
+                                                    h = 12;
+                                                }
+
+                                                if (h > 12) {
+                                                    h = h - 12;
+                                                    session = "PM";
+                                                }
+
+                                                h = (h < 10) ? "0" + h : h;
+                                                m = (m < 10) ? "0" + m : m;
+                                                s = (s < 10) ? "0" + s : s;
+
+                                                var time = h + ":" + m + ":" + s + " " + session;
+                                                document.getElementById("MyClockDisplay").innerText = time;
+                                                document.getElementById("MyClockDisplay").textContent = time;
+
+                                                setTimeout(showTime, 1000);
+
+                                            }
+
+                                            showTime();
+                                        </script>
                                         <button class="mb-2 mr-2 btn btn-info" onclick="window.location = 'sortshift.php'">Refresh trang<span class="badge badge-light">NEW</span></button>
                                         <button class="mb-2 mr-2 btn btn-default">
-                                       <?php
+                                            <?php
                                             $date = getdate();
 
-                                        
-                                            echo "Thứ: ".$date['weekday']." >";
-                                            echo "Ngày: ".$date['mday']." /";
-                                            echo "Tháng: ".$date['mon']."/";
-                                            echo "Năm: ".$date['year']."<br/>"; 
-                                        ?>
+
+                                            echo "Thứ: " . $date['weekday'] . " >";
+                                            echo "Ngày: " . $date['mday'] . " /";
+                                            echo "Tháng: " . $date['mon'] . "/";
+                                            echo "Năm: " . $date['year'] . "<br/>";
+                                            ?>
                                         </button>
                                     </div>
-                                    
+
                                     <div class="col-lg-12">
                                         <div class="main-card mb-3 card">
                                             <div class="card-body">
                                                 <h5 class="card-title">Shift </h5>
-                                                
+
                                                 <table class="mb-0 table table-striped">
                                                     <thead>
                                                         <tr>
-                                                            <th>Team 1</th>
+                                                            <th>GP 1</th>
                                                             <th>Morning Shift </th>
                                                             <th>Night Shift </th>
                                                             <th>Cashier Morning Shift</th>
@@ -567,13 +578,13 @@ showTime();
                                                         <tr>
                                                             <th scope="row">Thứ 3</th>
                                                             <td>
-                                                            <?php
-                                                            $get_nv3 = $cs->show_shiftnhanvien("9AM-4PM", "1");
-                                                            if($get_nv3){
-                                                                while ($result3 = $get_nv3->fetch_assoc()) {
-                                                                    echo $result3['ten'] . " >SĐT: " . $result3['sdt'] . "<br/>";
+                                                                <?php
+                                                                $get_nv3 = $cs->show_shiftnhanvien("9AM-4PM", "1");
+                                                                if ($get_nv3) {
+                                                                    while ($result3 = $get_nv3->fetch_assoc()) {
+                                                                        echo $result3['ten'] . " >SĐT: " . $result3['sdt'] . "<br/>";
+                                                                    }
                                                                 }
-                                                            }
                                                                 ?>
                                                             </td>
                                                             <td>
@@ -587,7 +598,7 @@ showTime();
 
                                                                 ?>
                                                             </td>
-                                                            
+
 
                                                             <td>
                                                                 <?php
@@ -618,10 +629,10 @@ showTime();
                                                             <td>
                                                                 <?php
                                                                 $get_nv4 = $cs->show_shiftnhanvien("9AM-4PM", "1");
-                                                                if($get_nv4){
-                                                                while ($result4 = $get_nv4->fetch_assoc()) {
-                                                                    echo $result4['ten'] . " >SĐT: " . $result4['sdt'] . "<br/>";
-                                                                }
+                                                                if ($get_nv4) {
+                                                                    while ($result4 = $get_nv4->fetch_assoc()) {
+                                                                        echo $result4['ten'] . " >SĐT: " . $result4['sdt'] . "<br/>";
+                                                                    }
                                                                 }
                                                                 ?>
                                                             </td>
@@ -664,11 +675,11 @@ showTime();
                                                             <th scope="row">Thứ 5</th>
                                                             <td><?php
                                                                 $get_nv5 = $cs->show_shiftnhanvien("9AM-4PM", "1");
-                                                                if($get_nv5){
-                                                                while ($result5 = $get_nv5->fetch_assoc()) {
-                                                                    echo $result5['ten'] . " >SĐT: " . $result5['sdt'] . "<br/>";
+                                                                if ($get_nv5) {
+                                                                    while ($result5 = $get_nv5->fetch_assoc()) {
+                                                                        echo $result5['ten'] . " >SĐT: " . $result5['sdt'] . "<br/>";
+                                                                    }
                                                                 }
-                                                            }
                                                                 ?>
                                                             </td>
                                                             <td>
@@ -709,13 +720,13 @@ showTime();
                                                         <tr>
                                                             <th scope="row">Thứ 6</th>
                                                             <td>
-                                                            <?php
+                                                                <?php
                                                                 $get_nv6 = $cs->show_shiftnhanvien("9AM-4PM", "1");
-                                                                if($get_nv6){
-                                                                while ($result6 = $get_nv6->fetch_assoc()) {
-                                                                    echo $result6['ten'] . " >SĐT: " . $result6['sdt'] . "<br/>";
+                                                                if ($get_nv6) {
+                                                                    while ($result6 = $get_nv6->fetch_assoc()) {
+                                                                        echo $result6['ten'] . " >SĐT: " . $result6['sdt'] . "<br/>";
+                                                                    }
                                                                 }
-                                                            }
                                                                 ?>
                                                             </td>
                                                             <td>
@@ -756,12 +767,13 @@ showTime();
                                                         <tr>
                                                             <th scope="row">Thứ 7</th>
                                                             <td>
-                                                            <?php
+                                                                <?php
                                                                 $get_nv7 = $cs->show_shiftnhanvien("9AM-4PM", "1");
-                                                                if($get_nv7){
-                                                                while ($result7 = $get_nv7->fetch_assoc()) {
-                                                                    echo $result7['ten'] . " >SĐT: " . $result7['sdt'] . "<br/>";
-                                                                }}
+                                                                if ($get_nv7) {
+                                                                    while ($result7 = $get_nv7->fetch_assoc()) {
+                                                                        echo $result7['ten'] . " >SĐT: " . $result7['sdt'] . "<br/>";
+                                                                    }
+                                                                }
                                                                 ?>
                                                             </td>
                                                             <td>
@@ -802,13 +814,13 @@ showTime();
                                                         <tr>
                                                             <th scope="row">Chủ nhật</th>
                                                             <td>
-                                                            <?php
+                                                                <?php
                                                                 $get_nv44 = $cs->show_shiftnhanvien("9AM-4PM", "1");
-                                                                if($get_nv44){
-                                                                while ($result44 = $get_nv44->fetch_assoc()) {
-                                                                    echo $result44['ten'] . " >SĐT: " . $result44['sdt'] . "<br/>";
+                                                                if ($get_nv44) {
+                                                                    while ($result44 = $get_nv44->fetch_assoc()) {
+                                                                        echo $result44['ten'] . " >SĐT: " . $result44['sdt'] . "<br/>";
+                                                                    }
                                                                 }
-                                                            }
                                                                 ?>
                                                             </td>
                                                             <td>
@@ -853,7 +865,7 @@ showTime();
                                                 <table class="mb-0 table table-striped">
                                                     <thead>
                                                         <tr style="color:blue;">
-                                                            <th>Team 2</th>
+                                                            <th>GP 2</th>
                                                             <th>Morning Shift </th>
                                                             <th>Night Shift </th>
                                                             <th>Cashier Morning Shift</th>
@@ -913,7 +925,7 @@ showTime();
                                                         <tr>
                                                             <th scope="row">Thứ 3</th>
                                                             <td>
-                                                            <?php
+                                                                <?php
                                                                 $nvt23t3 = $cs->show_shiftnhanvien("9AM-4PM", "2");
                                                                 if ($nvt23t3) {
                                                                     while ($kqt23t3 = $nvt23t3->fetch_assoc()) {
@@ -934,7 +946,7 @@ showTime();
 
                                                                 ?>
                                                             </td>
-                                                            
+
                                                             <td>
                                                                 <?php
                                                                 $get_nvt3t3 = $cs->show_shiftCashier("10AM-4PM", "2");
@@ -967,7 +979,7 @@ showTime();
                                                                 while ($result4t4 = $get_nv4t4->fetch_assoc()) {
                                                                     echo $result4t4['ten'] . " >SĐT: " . $result4t4['sdt'] . "<br/>";
                                                                 }
-                                                            
+
                                                                 ?>
                                                             </td>
                                                             <td>
@@ -1052,7 +1064,7 @@ showTime();
                                                         <tr>
                                                             <th scope="row">Thứ 6</th>
                                                             <td>
-                                                            <?php
+                                                                <?php
                                                                 $get_nv6t6 = $cs->show_shiftnhanvien("9AM-4PM", "2");
                                                                 while ($result6t6 = $get_nv6t6->fetch_assoc()) {
                                                                     echo $result6t6['ten'] . " >SĐT: " . $result6t6['sdt'] . "<br/>";
@@ -1097,7 +1109,7 @@ showTime();
                                                         <tr>
                                                             <th scope="row">Thứ 7</th>
                                                             <td>
-                                                            <?php
+                                                                <?php
                                                                 $get_nv7t7 = $cs->show_shiftnhanvien("9AM-4PM", "2");
                                                                 while ($result7t7 = $get_nv7t7->fetch_assoc()) {
                                                                     echo $result7t7['ten'] . " >SĐT: " . $result7t7['sdt'] . "<br/>";
@@ -1107,10 +1119,9 @@ showTime();
                                                             <td>
                                                                 <?php
                                                                 $get_nv4107t7 = $cs->show_shiftnhanvien("4PM-10PM", "2");
-                                                               
-                                                                    while ($result4107t7 = $get_nv4107t7->fetch_assoc()) {
-                                                                        echo $result4107t7['ten'] . " >SĐT: " . $result4107t7['sdt'] . "<br/>";
-                                                                   
+
+                                                                while ($result4107t7 = $get_nv4107t7->fetch_assoc()) {
+                                                                    echo $result4107t7['ten'] . " >SĐT: " . $result4107t7['sdt'] . "<br/>";
                                                                 }
 
                                                                 ?>
@@ -1121,8 +1132,8 @@ showTime();
                                                                 if ($get_nvt7t7t7) {
                                                                     while ($result7t7t8 = $get_nvt7t7t7->fetch_assoc()) {
                                                                         echo $result7t7t8['ten'] . " >SĐT: " . $result7t7t8['sdt'] . "<br/>";
-                                                                    
-                                                                }}
+                                                                    }
+                                                                }
 
                                                                 ?>
                                                             </td>
@@ -1132,8 +1143,8 @@ showTime();
                                                                 if ($get_nvt2497t7) {
                                                                     while ($result2497t7 = $get_nvt2497t7->fetch_assoc()) {
                                                                         echo $result2497t7['ten'] . " >SĐT: " . $result2497t7['sdt'] . "<br/>";
-                                                                    
-                                                                }}
+                                                                    }
+                                                                }
 
                                                                 ?>
                                                             </td>
@@ -1142,7 +1153,7 @@ showTime();
                                                         <tr>
                                                             <th scope="row">Chủ nhật</th>
                                                             <td>
-                                                            <?php
+                                                                <?php
                                                                 $get_nv44cn1 = $cs->show_shiftnhanvien("9AM-4PM", "2");
                                                                 while ($result44cn1 = $get_nv44cn1->fetch_assoc()) {
                                                                     echo $result44cn1['ten'] . " >SĐT: " . $result44cn1['sdt'] . "<br/>";
@@ -1152,10 +1163,9 @@ showTime();
                                                             <td>
                                                                 <?php
                                                                 $get_nv410cnn = $cs->show_shiftnhanvien("4PM-10PM", "2");
-                                                                
-                                                                    while ($result410cnn = $get_nv410cnn->fetch_assoc()) {
-                                                                        echo $result410cnn['ten'] . " >SĐT: " . $result410cnn['sdt'] . "<br/>";
-                                                                    
+
+                                                                while ($result410cnn = $get_nv410cnn->fetch_assoc()) {
+                                                                    echo $result410cnn['ten'] . " >SĐT: " . $result410cnn['sdt'] . "<br/>";
                                                                 }
 
                                                                 ?>
@@ -1200,7 +1210,23 @@ showTime();
             <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
         </div>
     </div>
+    <!-- Modal -->
+    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="bug-container hide" style="background: rgb(255,0,0,0.1); margin-top:20px; text-align: center;">
+                    <div>View Shift (Chuột phải lưu ảnh về máy)</div>
+                    <div class="bug" style="margin-top: 10px; cursor: crosshair;">
+                        <img width="100%" class="screen">
+                        <div class="region" style="position: absolute; background: rgba(255,0,0,0.4);"></div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
     <script type="text/javascript" src="./assets/scripts/main.js"></script>
+
 </body>
 
 </html>
