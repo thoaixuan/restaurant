@@ -4,3 +4,4 @@ Done project
 + Quản lý nhân viên
 + Sắp ngẫu nhiên 2 nhóm
 + Chia ca làm việc
++ XEm thông tin nhân viên

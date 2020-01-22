@@ -1,6 +1,6 @@
 RewriteEngine On
 
-# Đường dẫn trang   pages.php
+# Đường dẫn trang   index.php
 RewriteRule "trang" "pages.php"
 # Đường dẫn lỗi   index.php
 RewriteRule "404" "404.php"

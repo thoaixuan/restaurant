@@ -540,7 +540,7 @@ while($kq=$count->fetch_assoc())
                                                     <div class="badge badge-default"><?=$result['ghichu']?></div>
                                                 </td>
                                                 <td class="text-center">
-                                                    <button type="button" id="PopoverCustomT-2" class="btn btn-primary btn-sm">Details</button>
+                                                    <button type="button"  onclick="window.open('profile.php?name=<?=$result['ten']?>')" class="btn btn-primary btn-sm">Details</button>
                                                 </td>
                                             </tr>
                                             <?php 

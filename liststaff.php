@@ -473,7 +473,8 @@ include 'sidebar.php';
                                                     <a style="color:red;" type="button" id="PopoverCustomT-2" onclick = "return confirm('Are you want to delete???')" 
                                                    href="?delid=<?php echo $result['ten'] ?>"> Xóa</a>
                                                    
-                                                    <button onclick="window.location = 'formchange.php?name=<?=$result['ten'] ?>'" type="button" id="PopoverCustomT-2" class="btn btn-primary btn-sm">Sửa</button>
+                                                    <button onclick="window.location = 'formchange.php?name=<?=$result['ten'] ?>'"  id="PopoverCustomT-2" class="btn btn-primary btn-sm">Sửa</button>
+                                                    <button target="_blank" onclick="window.open('profile.php?name=<?=$result['ten']?>')" class="btn btn-info btn-sm">View profile</button>
                                                 </td>   
                                             </tr>
                                             <?php 

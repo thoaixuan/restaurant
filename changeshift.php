@@ -44,8 +44,10 @@ include 'helpers/slug.php';
                 <div class="app-header-left">
                     <div class="search-wrapper">
                         <div class="input-holder">
-                            <input type="text" class="search-input" placeholder="Type to search">
-                            <button class="search-icon"><span></span></button>
+                            
+                            <input type="text" class="search-input" name ="search" placeholder="Type to search">
+                            <button class="search-icon" ><span></span></button>
+                            
                         </div>
                         <button class="close"></button>
                     </div>
@@ -468,7 +470,9 @@ include 'sidebar.php';
                                                 <td class="text-center" title="SĐT : <?=$result['sdt']?>"><?=$result['ghichu']?></td>
                                                 
                                                 <td class="text-center">
-                                                    <button onclick="window.location = 'formchange.php?name=<?=$result['ten'] ?>'" type="button" id="PopoverCustomT-2" class="btn btn-primary btn-sm">Change Shift or position</button>
+                                                    <button onclick="window.location = 'formchange.php?name=<?=$result['ten'] ?>'" class="btn btn-primary btn-sm">Change Shift or position</button>
+                                                    <button onclick="window.open('profile.php?name=<?=$result['ten'] ?>')" class="btn btn-info btn-sm">Details</button>
+                                                    
                                                 </td>   
                                             </tr>
                                             <?php 
