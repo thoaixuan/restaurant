@@ -3,6 +3,10 @@ $check1 = "";
 $check2 = "";
 $check3 = "";
 $check4 = "";
+$check7 = "";
+$check6 = "";
+$check5 = "";
+$check8 = "";
 $check = basename($_SERVER['REQUEST_URI'], '?' . $_SERVER['QUERY_STRING']);
 
 switch ($check) {
@@ -15,6 +19,10 @@ switch ($check) {
     case "newstaff.php":
         $check3 = "mm-active";
         break;
+    case "newcheft.php":
+        $check3 = "mm-active";
+        break;
+
     case "sortteam.php":
         $check4 = "mm-active";
         break;
@@ -23,6 +31,15 @@ switch ($check) {
         break;
     case "changeshift.php":
         $check6 = "mm-active";
+        break;
+    case "draganddrop.php":
+        $check7 = "mm-active";
+        break;
+    case "listcheft.php":
+        $check8 = "mm-active";
+        break;
+    case "formchangechef.php":
+        $check8 = "mm-active";
         break;
     default:
         echo "";
@@ -45,6 +62,12 @@ switch ($check) {
                     <i class="metismenu-icon pe-7s-tools"></i>
                     Danh sách NV
                 </a>
+
+                <a href="listcheft.php" class="<?= $check8 ?>">
+                    <i class="metismenu-icon pe-7s-note"></i>
+                    Manage Chef
+                </a>
+
                 <a href="newstaff.php" class="<?php echo $check3 ?>">
                     <i class="metismenu-icon pe-7s-news-paper"></i>
                     Thêm mới NV
@@ -67,10 +90,11 @@ switch ($check) {
                     <i class="metismenu-icon pe-7s-arc"></i>
                     Change Shift
                 </a>
-                <a href="" class="">
+                <a href="draganddrop.php" class="<?php echo $check7 ?>">
                     <i class="metismenu-icon pe-7s-helm"></i>
-                    Shift Cheft [UPDATE LATER]
+                    Shift Cheft
                 </a>
+
             </li>
 
 

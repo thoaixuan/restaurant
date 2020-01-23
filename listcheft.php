@@ -131,22 +131,22 @@ include 'sidebar.php';
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="main-card mb-3 card">
-                                    <div class="card-header">Danh sách NV
+                                    <div class="card-header">Danh sách nhân viên bếp
                                         <div class="btn-actions-pane-right">
                                             <div role="group" class="btn-group-sm btn-group">
-                                                <button class=" btn btn-info" onclick="window.location = 'newstaff.php'">Thêm nhân viên</button>
-                                                <button class="active btn btn-focus" onclick="window.location = 'sortteam.php'">Chia GP</button>
-                                                <button class="btn btn-focus" onclick="window.location = 'sortshift.php'">Chia ca làm việc</button>
+                                                <button class=" btn btn-info" onclick="window.location = 'newcheft.php'">Thêm nhân viên</button>
+                                                
+                                                <button class="btn btn-focus" onclick="window.location = 'draganddrop.php'">Chia ca làm việc</button>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="table-responsive">
-                                        <table class="align-middle mb-0 table table-borderless table-striped table-hover">
+                                        <table class="mb-0 table">
                                             <thead>
                                             <tr>
                                                 <th class="text-center">#</th>
                                                 <th>Tên</th>
-                                                <th class="text-center">Chức vụ</th>
+                                                <th class="text-center">Ngày làm</th>
                                                 <th class="text-center">Ghi chú</th>
                                                 
                                                 <th class="text-center">Actions</th>
@@ -156,13 +156,13 @@ include 'sidebar.php';
                                             <?php
 
                                             $filepath = realpath(dirname(__FILE__));
-                                            include_once ($filepath.'/classes/nhanvien.php');
+                                            include_once ($filepath.'/classes/cheft.php');
                                             include_once ($filepath.'/../helpers/format.php');
                                             //
                                             //PHP OOP
                                             $i=1;
-                                            $cs = new nhanvien();   
-                                            $get_nv = $cs->show_nhanvien();
+                                            $cs = new cheft();   
+                                            $get_nv = $cs->show_cheft();
                                                             if($get_nv){
                                                                 while ($result = $get_nv->fetch_assoc()) 
                                                                 {
@@ -185,20 +185,15 @@ include 'sidebar.php';
                                                         </div>
                                                     </div>
                                                 </td>
-                                                <td class="text-center" title="SĐT : <?=$result['sdt']?>"><?php
-                                                if($result['chucvu']!="Chạy bàn") echo 'Cashier'."<b style='color:red;'>*</b>";
-                                                else echo 'Server';
-                                                ?></td>
+                                                <td class="text-center" ><?=$result['schechuledefault']?></td>
                                                 <td class="text-center" title="SĐT : <?=$result['sdt']?>"><?=$result['ghichu']?></td>
                                                 
                                                 <td class="text-center">
 
-                                            
                                                     <a style="color:red;" type="button" id="PopoverCustomT-2" onclick = "return confirm('Are you want to delete???')" 
                                                    href="?delid=<?php echo $result['ten'] ?>"> Xóa</a>
                                                    
-                                                    <button onclick="window.location = 'formchange.php?name=<?=$result['ten'] ?>'"  id="PopoverCustomT-2" class="btn btn-primary btn-sm">Sửa</button>
-                                                    <button target="_blank" onclick="window.open('profile.php?name=<?=$result['ten']?>')" class="btn btn-info btn-sm">View profile</button>
+                                                    <button onclick="window.open('formchangechef.php?name=<?=$result['ten']?>')" class="btn btn-info btn-sm">Change Shift</button>
                                                 </td>   
                                             </tr>
                                             <?php 
@@ -219,16 +214,16 @@ include 'sidebar.php';
                                                     
                                                 }else {
                                                     $id = $_GET['delid']; // Lấy catid trên host
-                                                    $delCat = $cs -> del_staff($id); // hàm check delete Name khi submit lên
+                                                    $delCat = $cs -> del_cheft($id); // hàm check delete Name khi submit lên
                                                 }
                                                 
                                                 if(isset($delCat)){
                                                     echo $delCat;
+                                                    
                                                 }
                                              
                                     ?></button>
-                                        <button class="btn-wide btn btn-primary" onclick="window.location = 'liststaff.php'">Refresh trang</button>
-                                        <button class="btn-wide btn btn-success" onclick="window.location = 'newstaff.php'">Thêm nhân viên mới</button>
+                                      
                                     </div>
                                 </div>
                             </div>
