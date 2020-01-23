@@ -491,7 +491,7 @@ include 'helpers/slug.php';
                                             $date = getdate();
 
 
-                                            echo "Thứ: " . $date['weekday'] . " >";
+                                            echo $date['weekday'] . " >";
                                             echo "Ngày: " . $date['mday'] . " /";
                                             echo "Tháng: " . $date['mon'] . "/";
                                             echo "Năm: " . $date['year'] . "<br/>";
