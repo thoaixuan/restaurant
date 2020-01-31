@@ -253,5 +253,20 @@
 			
 		}
 
+		// Get by week
+		public function GetSchedule($id, $nhom)
+		{
+			$query = "SELECT * FROM `nhanvien` WHERE count='$nhom' and schedule='$id' or scheduledefault='$id' LIMIT 2  ";
+			$result = $this->db->delete($query);
+			return $result;
+		}
+		// Get by week
+		public function CountGetSchedule($id,$nhom)
+		{
+			$query = "SELECT  COUNT(*) as nv FROM `nhanvien` WHERE count='$nhom' and schedule='$id' or scheduledefault='$id'   ";
+			$result = $this->db->delete($query);
+			return $result;
+		}
+
 	}
 ?>

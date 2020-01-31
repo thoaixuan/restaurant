@@ -582,7 +582,7 @@ include 'helpers/slug.php';
                                                 </table>
 
                                                 <!--Team 2 -->
-                                                <table class="mb-0 table table-striped">
+                                                <table class="mb-0 table table-hover">
                                                     <thead>
                                                         <tr style="color:blue;">
                                                             <th>GP 2</th>

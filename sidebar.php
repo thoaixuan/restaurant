@@ -7,6 +7,7 @@ $check7 = "";
 $check6 = "";
 $check5 = "";
 $check8 = "";
+$check9 = "";
 $check = basename($_SERVER['REQUEST_URI'], '?' . $_SERVER['QUERY_STRING']);
 
 switch ($check) {
@@ -41,6 +42,9 @@ switch ($check) {
     case "formchangechef.php":
         $check8 = "mm-active";
         break;
+    case "setschedule.php":
+        $check9 = "mm-active";
+        break;
     default:
         echo "";
 }
@@ -71,6 +75,10 @@ switch ($check) {
                 <a href="newstaff.php" class="<?php echo $check3 ?>">
                     <i class="metismenu-icon pe-7s-news-paper"></i>
                     Thêm mới NV
+                </a>
+                <a href="setschedule.php?name=Thoại Thẫn Thờ" class="<?php echo $check9 ?>">
+                    <i class="metismenu-icon pe-7s-helm"></i>
+                    Set Schedule shift
                 </a>
 
             </li>
