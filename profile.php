@@ -103,6 +103,14 @@
                                     <p><?= $kq['count'] ?></p>
                                 </div>
                             </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>Lịch làm cố định</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <p style="color:red;"><?= $kq['schedule'] ?></p>
+                                </div>
+                            </div>
                         </div>
 
                     </div>

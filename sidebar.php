@@ -76,16 +76,17 @@ switch ($check) {
                     <i class="metismenu-icon pe-7s-news-paper"></i>
                     Thêm mới NV
                 </a>
-                <a href="setschedule.php?name=Thoại Thẫn Thờ" class="<?php echo $check9 ?>">
-                    <i class="metismenu-icon pe-7s-helm"></i>
-                    Set Schedule shift
-                </a>
+                
 
             </li>
 
 
             <li class="app-sidebar__heading">Shift</li>
             <li>
+            <a href="setschedule.php" class="<?php echo $check9 ?>">
+                    <i class="metismenu-icon pe-7s-helm"></i>
+                    Set Schedule
+            </a>
                 <a href="sortteam.php" class="<?php echo $check4 ?>">
                     <i class="metismenu-icon pe-7s-display2"></i>
                     Random GP 1 || GP 2

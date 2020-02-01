@@ -8,7 +8,7 @@ include 'helpers/slug.php';
 <!doctype html>
 <html lang="vi">
 <?php include 'head.php';?>
-<body>
+<body> 
     <div class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header">
         <div class="app-header header-shadow">
             <div class="app-header__logo">

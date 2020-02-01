@@ -70,6 +70,15 @@
 			
 			return $result;
 		}
+
+		public function show_shiftnhanvienRD1($ca,$team)
+		{
+			
+			$query = "SELECT * FROM nhanvien where calamviec ='$ca' && count='$team' ORDER BY RAND() limit 1";	
+			$result = $this->db->select($query);
+			
+			return $result;
+		} 
 		public function show_shiftCashier($ca,$team)
 		{
 			
@@ -253,20 +262,44 @@
 			
 		}
 
-		// Get by week
-		public function GetSchedule($id, $nhom)
+		// show nv  by week
+		public function GetSchedule($thu,$calam, $nhom)
 		{
-			$query = "SELECT * FROM `nhanvien` WHERE count='$nhom' and schedule='$id' or scheduledefault='$id' LIMIT 2  ";
+			$query = "SELECT * FROM `nhanvien` WHERE count='$nhom' and calamviec='$calam' and schedule='$thu' or scheduledefault='$thu' LIMIT 2  ";
 			$result = $this->db->delete($query);
 			return $result;
 		}
-		// Get by week
-		public function CountGetSchedule($id,$nhom)
+		// Count by week
+		public function CountGetSchedule($id,$calam,$nhom)
 		{
-			$query = "SELECT  COUNT(*) as nv FROM `nhanvien` WHERE count='$nhom' and schedule='$id' or scheduledefault='$id'   ";
+			$query = "SELECT  COUNT(*) as nv FROM `nhanvien` WHERE count='$nhom'and calamviec='$calam' and schedule='$id'";
 			$result = $this->db->delete($query);
 			return $result;
 		}
 
+		// Set default schedule
+		public function SetSchedule_customers($data, $ten)
+		{
+			
+			$ten = mysqli_real_escape_string($this->db->link, $data['ten']);
+			$schedule = mysqli_real_escape_string($this->db->link, $data['schedule']);
+            
+		
+			if($ten==""){
+				$alert = "<span class='error'>Fields must be not empty</span>";
+				return $alert;
+			}else{
+				$query = "UPDATE nhanvien SET schedule='$schedule', scheduledefault='$schedule' WHERE ten ='$ten'";
+				$result = $this->db->insert($query);
+				if($result){
+						$alert = "<span class='success'>Set schedule thành công, <a href='setschedule.php'> nhấp tải lại trang</a></span>";
+						return $alert;
+				}else{
+						$alert = "<span class='error'>Lỗi</span>";
+						return $alert;
+				}
+				
+			}
+		}
 	}
 ?>
