@@ -8,6 +8,7 @@ $check6 = "";
 $check5 = "";
 $check8 = "";
 $check9 = "";
+$check10 = "";
 $check = basename($_SERVER['REQUEST_URI'], '?' . $_SERVER['QUERY_STRING']);
 
 switch ($check) {
@@ -45,6 +46,9 @@ switch ($check) {
     case "setschedule.php":
         $check9 = "mm-active";
         break;
+    case "viewdraganddrop.php":
+        $check10 = "mm-active";
+        break;
     default:
         echo "";
 }
@@ -76,25 +80,26 @@ switch ($check) {
                     <i class="metismenu-icon pe-7s-news-paper"></i>
                     Thêm mới NV
                 </a>
-                
+
 
             </li>
 
 
             <li class="app-sidebar__heading">Shift</li>
             <li>
-            <a href="setschedule.php" class="<?php echo $check9 ?>">
+                <a href="setschedule.php" class="<?php echo $check9 ?>">
                     <i class="metismenu-icon pe-7s-helm"></i>
                     Set Schedule
-            </a>
-                <a href="sortteam.php" class="<?php echo $check4 ?>">
-                    <i class="metismenu-icon pe-7s-display2"></i>
-                    Random GP 1 || GP 2
                 </a>
                 <a href="sortshift.php" class="<?php echo $check5 ?>">
                     <i class="metismenu-icon pe-7s-note2"></i>
                     Chia ca làm
                 </a>
+                <a href="sortteam.php" class="<?php echo $check4 ?>">
+                    <i class="metismenu-icon pe-7s-display2"></i>
+                    Random GP 1 || GP 2
+                </a>
+
                 <a href="changeshift.php" class="<?php echo $check6 ?>">
                     <i class="metismenu-icon pe-7s-arc"></i>
                     Change Shift
@@ -102,6 +107,10 @@ switch ($check) {
                 <a href="draganddrop.php" class="<?php echo $check7 ?>">
                     <i class="metismenu-icon pe-7s-helm"></i>
                     Shift Cheft
+                </a>
+                <a href="viewdraganddrop.php" class="<?php echo $check10 ?>">
+                    <i class="metismenu-icon pe-7s-helm"></i>
+                    Xem trực quan Schedule
                 </a>
 
             </li>

@@ -137,7 +137,7 @@ include 'helpers/slug.php';
                                 <div class="card-header">Đặt lịch cố định ngày làm
                                     <div class="btn-actions-pane-right">
                                         <div role="group" class="btn-group-sm btn-group">
-
+                                            <button class=" btn btn-danger" onclick="window.location = 'viewdraganddrop.php'">Xem trực quan Schedule</button>
                                             <button class=" btn btn-info" onclick="window.location = 'newstaff.php'">Thêm nhân viên</button>
                                             <button class="btn btn-primary" onclick="window.print()">Save</button>
                                             <button class="btn btn-focus" onclick="window.location = 'sortshift.php'">Chia ca làm việc</button>

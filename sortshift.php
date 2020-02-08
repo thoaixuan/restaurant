@@ -1069,26 +1069,37 @@ include 'helpers/slug.php';
 
                                                                 ?>
                                                             </td>
+                                                            
                                                             <td>
                                                                 <?php
-                                                                $get_nvt2t2 = $cs->show_shiftCashier("10AM-4PM", "2");
-                                                                if ($get_nvt2t2) {
-                                                                    while ($result2t2 = $get_nvt2t2->fetch_assoc()) {
-                                                                        echo $result2t2['ten'] . ",<br/>";
+                                                                // morning
+                                                                $get_nvt2_team2_cas = $cs->show_shiftCashier("Thứ 2", "10AM-4PM", "2");
+                                                                $get_rd_nv_team2_cas = $cs->show_RD1_Cashier("10AM-4PM", "2");
+                                                                if ($get_nvt2_team2_cas) {
+                                                                    while ($result2_cas = $get_nvt2_team2_cas->fetch_assoc()) {
+                                                                        echo $result2_cas['ten'] . ",<br/>";
+                                                                    }
+                                                                } else {
+                                                                    while ($resul_rd_t2team2_cas = $get_rd_nv_team2_cas->fetch_assoc()) {
+                                                                        echo $resul_rd_t2team2_cas['ten'] . ",<br/>";
                                                                     }
                                                                 }
-
                                                                 ?>
                                                             </td>
                                                             <td>
                                                                 <?php
-                                                                $get_nvt249t2 = $cs->show_shiftCashier("4PM-9PM", "2");
-                                                                if ($get_nvt249t2) {
-                                                                    while ($result249t2 = $get_nvt249t2->fetch_assoc()) {
-                                                                        echo $result249t2['ten'] . ",<br/>";
+                                                                // night
+                                                                $get_nvt2_team2_cas_night = $cs->show_shiftCashier("Thứ 2", "4PM-9PM", "2");
+                                                                $get_rd_nv_team2_cas_night = $cs->show_RD1_Cashier("4PM-9PM", "2");
+                                                                if ($get_nvt2_team2_cas_night) {
+                                                                    while ($result2_cas_night_team2 = $get_nvt2_team2_cas_night->fetch_assoc()) {
+                                                                        echo $result2_cas_night_team2['ten'] . ",<br/>";
+                                                                    }
+                                                                } else {
+                                                                    while ($resul_rd_t2team2_cas_night = $get_rd_nv_team2_cas_night->fetch_assoc()) {
+                                                                        echo $resul_rd_t2team2_cas_night['ten'] . ",<br/>";
                                                                     }
                                                                 }
-
                                                                 ?>
                                                             </td>
 
@@ -1163,24 +1174,34 @@ include 'helpers/slug.php';
 
                                                             <td>
                                                                 <?php
-                                                                $get_nvt3t3 = $cs->show_shiftCashier("10AM-4PM", "2");
-                                                                if ($get_nvt3t3) {
-                                                                    while ($result3t3 = $get_nvt3t3->fetch_assoc()) {
-                                                                        echo $result3t3['ten'] . ",<br/>";
+                                                                // morning
+                                                                $get_nvt3_team2_cas = $cs->show_shiftCashier("Thứ 3", "10AM-4PM", "2");
+                                                                $get_rd_nv_team2_cas_t3 = $cs->show_RD1_Cashier("10AM-4PM", "2");
+                                                                if ($get_nvt3_team2_cas) {
+                                                                    while ($result3_cas = $get_nvt3_team2_cas->fetch_assoc()) {
+                                                                        echo $result3_cas['ten'] . ",<br/>";
+                                                                    }
+                                                                } else {
+                                                                    while ($resul_rd_t3team2_cas = $get_rd_nv_team2_cas_t3->fetch_assoc()) {
+                                                                        echo $resul_rd_t3team2_cas['ten'] . ",<br/>";
                                                                     }
                                                                 }
-
                                                                 ?>
                                                             </td>
                                                             <td>
                                                                 <?php
-                                                                $get_nvt2493t3 = $cs->show_shiftCashier("4PM-9PM", "2");
-                                                                if ($get_nvt2493t3) {
-                                                                    while ($result2493t3 = $get_nvt2493t3->fetch_assoc()) {
-                                                                        echo $result2493t3['ten'] . ",<br/>";
+                                                                // night
+                                                                $get_nvt3_team2_cas_night = $cs->show_shiftCashier("Thứ 3", "4PM-9PM", "2");
+                                                                $get_rd_nv_team2_cas_t3_night = $cs->show_RD1_Cashier("4PM-9PM", "2");
+                                                                if ($get_nvt3_team2_cas_night) {
+                                                                    while ($result3_cas_night_team2 = $get_nvt3_team2_cas_night->fetch_assoc()) {
+                                                                        echo $result3_cas_night_team2['ten'] . ",<br/>";
+                                                                    }
+                                                                } else {
+                                                                    while ($resul_rd_t3team2_cas_night = $get_rd_nv_team2_cas_t3_night->fetch_assoc()) {
+                                                                        echo $resul_rd_t3team2_cas_night['ten'] . ",<br/>";
                                                                     }
                                                                 }
-
                                                                 ?>
                                                             </td>
 
@@ -1252,26 +1273,37 @@ include 'helpers/slug.php';
 
                                                                 ?>
                                                             </td>
+                                                            
                                                             <td>
                                                                 <?php
-                                                                $get_nvt4t4 = $cs->show_shiftCashier("10AM-4PM", "2");
-                                                                if ($get_nvt4t4) {
-                                                                    while ($result4t4 = $get_nvt4t4->fetch_assoc()) {
-                                                                        echo $result4t4['ten'] . ",<br/>";
+                                                                // morning
+                                                                $get_nvt4_team2_cas = $cs->show_shiftCashier("Thứ 4", "10AM-4PM", "2");
+                                                                $get_rd_nv_team2_cas_t4 = $cs->show_RD1_Cashier("10AM-4PM", "2");
+                                                                if ($get_nvt4_team2_cas) {
+                                                                    while ($result4_cas = $get_nvt4_team2_cas->fetch_assoc()) {
+                                                                        echo $result4_cas['ten'] . ",<br/>";
+                                                                    }
+                                                                } else {
+                                                                    while ($resul_rd_t4team2_cas = $get_rd_nv_team2_cas_t4->fetch_assoc()) {
+                                                                        echo $resul_rd_t4team2_cas['ten'] . ",<br/>";
                                                                     }
                                                                 }
-
                                                                 ?>
                                                             </td>
                                                             <td>
                                                                 <?php
-                                                                $get_nvt2494t4 = $cs->show_shiftCashier("4PM-9PM", "2");
-                                                                if ($get_nvt2494t4) {
-                                                                    while ($result2494t4 = $get_nvt2494t4->fetch_assoc()) {
-                                                                        echo $result2494t4['ten'] . ",<br/>";
+                                                                // night
+                                                                $get_nvt4_team2_cas_night = $cs->show_shiftCashier("Thứ 4", "4PM-9PM", "2");
+                                                                $get_rd_nv_team2_cas_t4_night = $cs->show_RD1_Cashier("4PM-9PM", "2");
+                                                                if ($get_nvt4_team2_cas_night) {
+                                                                    while ($result4_cas_night_team2 = $get_nvt4_team2_cas_night->fetch_assoc()) {
+                                                                        echo $result4_cas_night_team2['ten'] . ",<br/>";
+                                                                    }
+                                                                } else {
+                                                                    while ($resul_rd_t4team2_cas_night = $get_rd_nv_team2_cas_t4_night->fetch_assoc()) {
+                                                                        echo $resul_rd_t4team2_cas_night['ten'] . ",<br/>";
                                                                     }
                                                                 }
-
                                                                 ?>
                                                             </td>
 
@@ -1343,26 +1375,37 @@ include 'helpers/slug.php';
 
                                                                 ?>
                                                             </td>
+                                                            
                                                             <td>
                                                                 <?php
-                                                                $get_nvt5t5 = $cs->show_shiftCashier("10AM-4PM", "2");
-                                                                if ($get_nvt5t5) {
-                                                                    while ($result5t5 = $get_nvt5t5->fetch_assoc()) {
-                                                                        echo $result5t5['ten'] . ",<br/>";
+                                                                // morning
+                                                                $get_nvt5_team2_cas = $cs->show_shiftCashier("Thứ 5", "10AM-4PM", "2");
+                                                                $get_rd_nv_team2_cas_t5 = $cs->show_RD1_Cashier("10AM-4PM", "2");
+                                                                if ($get_nvt5_team2_cas) {
+                                                                    while ($result5_cas = $get_nvt5_team2_cas->fetch_assoc()) {
+                                                                        echo $result5_cas['ten'] . ",<br/>";
+                                                                    }
+                                                                } else {
+                                                                    while ($resul_rd_t5team2_cas = $get_rd_nv_team2_cas_t5->fetch_assoc()) {
+                                                                        echo $resul_rd_t5team2_cas['ten'] . ",<br/>";
                                                                     }
                                                                 }
-
                                                                 ?>
                                                             </td>
                                                             <td>
                                                                 <?php
-                                                                $get_nvt2495t5 = $cs->show_shiftCashier("4PM-9PM", "2");
-                                                                if ($get_nvt2495t5) {
-                                                                    while ($result2495t5 = $get_nvt2495t5->fetch_assoc()) {
-                                                                        echo $result2495t5['ten'] . ",<br/>";
+                                                                // night
+                                                                $get_nvt5_team2_cas_night = $cs->show_shiftCashier("Thứ 5", "4PM-9PM", "2");
+                                                                $get_rd_nv_team2_cas_t5_night = $cs->show_RD1_Cashier("4PM-9PM", "2");
+                                                                if ($get_nvt5_team2_cas_night) {
+                                                                    while ($result5_cas_night_team2 = $get_nvt5_team2_cas_night->fetch_assoc()) {
+                                                                        echo $result5_cas_night_team2['ten'] . ",<br/>";
+                                                                    }
+                                                                } else {
+                                                                    while ($resul_rd_t5team2_cas_night = $get_rd_nv_team2_cas_t5_night->fetch_assoc()) {
+                                                                        echo $resul_rd_t5team2_cas_night['ten'] . ",<br/>";
                                                                     }
                                                                 }
-
                                                                 ?>
                                                             </td>
 
@@ -1434,26 +1477,37 @@ include 'helpers/slug.php';
 
                                                                 ?>
                                                             </td>
+                                                            
                                                             <td>
                                                                 <?php
-                                                                $get_nvt6t6 = $cs->show_shiftCashier("10AM-4PM", "2");
-                                                                if ($get_nvt6t6) {
-                                                                    while ($result6t6 = $get_nvt6t6->fetch_assoc()) {
-                                                                        echo $result6t6['ten'] . ",<br/>";
+                                                                // morning
+                                                                $get_nvt6_team2_cas = $cs->show_shiftCashier("Thứ 6", "10AM-4PM", "2");
+                                                                $get_rd_nv_team2_cas_t6 = $cs->show_RD1_Cashier("10AM-4PM", "2");
+                                                                if ($get_nvt6_team2_cas) {
+                                                                    while ($result6_cas = $get_nvt6_team2_cas->fetch_assoc()) {
+                                                                        echo $result6_cas['ten'] . ",<br/>";
+                                                                    }
+                                                                } else {
+                                                                    while ($resul_rd_t6team2_cas = $get_rd_nv_team2_cas_t6->fetch_assoc()) {
+                                                                        echo $resul_rd_t6team2_cas['ten'] . ",<br/>";
                                                                     }
                                                                 }
-
                                                                 ?>
                                                             </td>
                                                             <td>
                                                                 <?php
-                                                                $get_nvt2496t6 = $cs->show_shiftCashier("4PM-9PM", "2");
-                                                                if ($get_nvt2496t6) {
-                                                                    while ($result2496t6 = $get_nvt2496t6->fetch_assoc()) {
-                                                                        echo $result2496t6['ten'] . ",<br/>";
+                                                                // night
+                                                                $get_nvt6_team2_cas_night = $cs->show_shiftCashier("Thứ 6", "4PM-9PM", "2");
+                                                                $get_rd_nv_team2_cas_t6_night = $cs->show_RD1_Cashier("4PM-9PM", "2");
+                                                                if ($get_nvt6_team2_cas_night) {
+                                                                    while ($result6_cas_night_team2 = $get_nvt6_team2_cas_night->fetch_assoc()) {
+                                                                        echo $result6_cas_night_team2['ten'] . ",<br/>";
+                                                                    }
+                                                                } else {
+                                                                    while ($resul_rd_t6team2_cas_night = $get_rd_nv_team2_cas_t6_night->fetch_assoc()) {
+                                                                        echo $resul_rd_t6team2_cas_night['ten'] . ",<br/>";
                                                                     }
                                                                 }
-
                                                                 ?>
                                                             </td>
 
@@ -1527,24 +1581,34 @@ include 'helpers/slug.php';
                                                             </td>
                                                             <td>
                                                                 <?php
-                                                                $get_nvt7t7t7 = $cs->show_shiftCashier("10AM-4PM", "2");
-                                                                if ($get_nvt7t7t7) {
-                                                                    while ($result7t7t8 = $get_nvt7t7t7->fetch_assoc()) {
-                                                                        echo $result7t7t8['ten'] . ",<br/>";
+                                                                // morning
+                                                                $get_nvt7_team2_cas = $cs->show_shiftCashier("Thứ 7", "10AM-4PM", "2");
+                                                                $get_rd_nv_team2_cas_t7 = $cs->show_RD1_Cashier("10AM-4PM", "2");
+                                                                if ($get_nvt7_team2_cas) {
+                                                                    while ($result7_cas = $get_nvt7_team2_cas->fetch_assoc()) {
+                                                                        echo $result7_cas['ten'] . ",<br/>";
+                                                                    }
+                                                                } else {
+                                                                    while ($resul_rd_t7team2_cas = $get_rd_nv_team2_cas_t7->fetch_assoc()) {
+                                                                        echo $resul_rd_t7team2_cas['ten'] . ",<br/>";
                                                                     }
                                                                 }
-
                                                                 ?>
                                                             </td>
                                                             <td>
                                                                 <?php
-                                                                $get_nvt2497t7 = $cs->show_shiftCashier("4PM-9PM", "2");
-                                                                if ($get_nvt2497t7) {
-                                                                    while ($result2497t7 = $get_nvt2497t7->fetch_assoc()) {
-                                                                        echo $result2497t7['ten'] . ",<br/>";
+                                                                // night
+                                                                $get_nvt7_team2_cas_night = $cs->show_shiftCashier("Thứ 7", "4PM-9PM", "2");
+                                                                $get_rd_nv_team2_cas_t7_night = $cs->show_RD1_Cashier("4PM-9PM", "2");
+                                                                if ($get_nvt7_team2_cas_night) {
+                                                                    while ($result7_cas_night_team2 = $get_nvt7_team2_cas_night->fetch_assoc()) {
+                                                                        echo $result7_cas_night_team2['ten'] . ",<br/>";
+                                                                    }
+                                                                } else {
+                                                                    while ($resul_rd_t7team2_cas_night = $get_rd_nv_team2_cas_t7_night->fetch_assoc()) {
+                                                                        echo $resul_rd_t7team2_cas_night['ten'] . ",<br/>";
                                                                     }
                                                                 }
-
                                                                 ?>
                                                             </td>
 
@@ -1616,24 +1680,35 @@ include 'helpers/slug.php';
 
                                                                 ?>
                                                             </td>
+                                                            
                                                             <td>
                                                                 <?php
-                                                                $get_nvt33n = $cs->show_shiftCashier("10AM-4PM", "2");
-                                                                if ($get_nvt33n) {
-                                                                    while ($result33n = $get_nvt33n->fetch_assoc()) {
-                                                                        echo $result33n['ten'] . ",<br/>";
+                                                                // morning
+                                                                $get_nvcn_team2_cas = $cs->show_shiftCashier("Chủ nhật", "10AM-4PM", "2");
+                                                                $get_rd_nv_team2_cas_cn = $cs->show_RD1_Cashier("10AM-4PM", "2");
+                                                                if ($get_nvcn_team2_cas) {
+                                                                    while ($resulcn_cas = $get_nvcn_team2_cas->fetch_assoc()) {
+                                                                        echo $resulcn_cas['ten'] . ",<br/>";
+                                                                    }
+                                                                } else {
+                                                                    while ($resul_rd_cnteam2_cas = $get_rd_nv_team2_cas_cn->fetch_assoc()) {
+                                                                        echo $resul_rd_cnteam2_cas['ten'] . ",<br/>";
                                                                     }
                                                                 }
-
                                                                 ?>
                                                             </td>
-
                                                             <td>
                                                                 <?php
-                                                                $get_nvt2499n = $cs->show_shiftCashier("4PM-9PM", "2");
-                                                                if ($get_nvt2499n) {
-                                                                    while ($result2499n = $get_nvt2499n->fetch_assoc()) {
-                                                                        echo $result2499n['ten'] . ",<br/>";
+                                                                // night
+                                                                $get_nvcn_team2_cas_night = $cs->show_shiftCashier("Chủ nhật", "4PM-9PM", "2");
+                                                                $get_rd_nv_team2_cas_cn_night = $cs->show_RD1_Cashier("4PM-9PM", "2");
+                                                                if ($get_nvcn_team2_cas_night) {
+                                                                    while ($resulcn_cas_night_team2 = $get_nvcn_team2_cas_night->fetch_assoc()) {
+                                                                        echo $resulcn_cas_night_team2['ten'] . ",<br/>";
+                                                                    }
+                                                                } else {
+                                                                    while ($resul_rd_cnteam2_cas_night = $get_rd_nv_team2_cas_cn_night->fetch_assoc()) {
+                                                                        echo $resul_rd_cnteam2_cas_night['ten'] . ",<br/>";
                                                                     }
                                                                 }
                                                                 ?>
