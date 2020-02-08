@@ -79,10 +79,22 @@
 			
 			return $result;
 		} 
-		public function show_shiftCashier($ca,$team)
+		// display staff by shift and team
+		public function show_shiftCashier($thu,$ca,$team)
 		{
 			
-			$query = "SELECT * FROM nhanvien where chucvu ='Thu ngân' && calamviec='$ca' && count='$team' ORDER BY RAND() limit 1";	
+			$query = "SELECT * FROM nhanvien where 
+			chucvu ='Thu ngân' && calamviec='$ca' && count='$team' and schedule='$thu' or scheduledefault='$thu' limit 1";	
+			$result = $this->db->select($query);
+			
+			return $result;
+		}
+		// show random 1 cashier
+		public function show_RD1_Cashier($ca,$team)
+		{
+			
+			$query = "SELECT * FROM nhanvien where 
+			chucvu ='Thu ngân' && calamviec='$ca' && count='$team' ORDER BY  RAND() limit 1";	
 			$result = $this->db->select($query);
 			
 			return $result;
@@ -126,7 +138,7 @@
 		public function show5_nhanvien()
 		{
 			
-			$query = "SELECT * FROM nhanvien  ORDER BY ten ASC limit 5";	
+			$query = "SELECT * FROM nhanvien  ORDER BY RAND() limit 5";	
 			$result = $this->db->select($query);
 			
 			return $result;

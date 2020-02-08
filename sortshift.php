@@ -278,7 +278,7 @@ include 'helpers/slug.php';
                                                                         echo $resultrd['ten'] . ",<br/>";
                                                                     }
                                                                 }
-                                                                
+
 
                                                                 ?>
                                                             </td>
@@ -320,28 +320,39 @@ include 'helpers/slug.php';
                                                             </td>
                                                             <td>
                                                                 <?php
-                                                                $get_nvt2 = $cs->show_shiftCashier("10AM-4PM", "1");
+                                                                // morning
+                                                                $get_nvt2 = $cs->show_shiftCashier("Thứ 2", "10AM-4PM", "1");
+                                                                $get_rd_nv = $cs->show_RD1_Cashier("10AM-4PM", "1");
                                                                 if ($get_nvt2) {
                                                                     while ($result2 = $get_nvt2->fetch_assoc()) {
                                                                         echo $result2['ten'] . ",<br/>";
                                                                     }
+                                                                } else {
+                                                                    while ($resul_rd_t2 = $get_rd_nv->fetch_assoc()) {
+                                                                        echo $resul_rd_t2['ten'] . ",<br/>";
+                                                                    }
                                                                 }
-
                                                                 ?>
                                                             </td>
                                                             <td>
                                                                 <?php
-                                                                $get_nvt249 = $cs->show_shiftCashier("4PM-9PM", "1");
-                                                                if ($get_nvt249) {
-                                                                    while ($result249 = $get_nvt249->fetch_assoc()) {
-                                                                        echo $result249['ten'] . ",<br/>";
+                                                                // night
+                                                                $get_nvt2_night = $cs->show_shiftCashier("Thứ 2", "4PM-9PM", "1");
+                                                                $get_rd_nv_night = $cs->show_RD1_Cashier("4PM-9PM", "1");
+                                                                if ($get_nvt2_night) {
+                                                                    while ($result2_night = $get_nvt2_night->fetch_assoc()) {
+                                                                        echo $result2_night['ten'] . ",<br/>";
+                                                                    }
+                                                                } else {
+                                                                    while ($resul_rd_t2_night = $get_rd_nv_night->fetch_assoc()) {
+                                                                        echo $resul_rd_t2_night['ten'] . ",<br/>";
                                                                     }
                                                                 }
-
                                                                 ?>
                                                             </td>
 
                                                         </tr>
+
                                                         <tr>
                                                             <th scope="row">Thứ 3</th>
                                                             <td>
@@ -409,7 +420,7 @@ include 'helpers/slug.php';
                                                                         echo $resultn3rdn3['ten'] . ",<br/>";
                                                                     }
                                                                 }
-                                                               
+
 
                                                                 ?>
                                                             </td>
@@ -417,32 +428,43 @@ include 'helpers/slug.php';
 
                                                             <td>
                                                                 <?php
-                                                                $get_nvt3 = $cs->show_shiftCashier("10AM-4PM", "1");
-                                                                if ($get_nvt3) {
-                                                                    while ($result3 = $get_nvt3->fetch_assoc()) {
-                                                                        echo $result3['ten'] . ",<br/>";
+                                                                // morning
+                                                                $get_nvt3_cahsier = $cs->show_shiftCashier("Thứ 3", "10AM-4PM", "1");
+                                                                $get_rd_nv_t3_cashier = $cs->show_RD1_Cashier("10AM-4PM", "1");
+                                                                if ($get_nvt3_cahsier) {
+                                                                    while ($result3_cashier = $get_nvt3_cahsier->fetch_assoc()) {
+                                                                        echo $result3_cashier['ten'] . ",<br/>";
+                                                                    }
+                                                                } else {
+                                                                    while ($resul_rd_t3_cashier = $get_rd_nv_t3_cashier->fetch_assoc()) {
+                                                                        echo $resul_rd_t3_cashier['ten'] . ",<br/>";
                                                                     }
                                                                 }
-
                                                                 ?>
                                                             </td>
                                                             <td>
                                                                 <?php
-                                                                $get_nvt2493 = $cs->show_shiftCashier("4PM-9PM", "1");
-                                                                if ($get_nvt2493) {
-                                                                    while ($result2493 = $get_nvt2493->fetch_assoc()) {
-                                                                        echo $result2493['ten'] . ",<br/>";
+                                                                // night
+                                                                $get_nvt3_cashier = $cs->show_shiftCashier("Thứ 3", "4PM-9PM", "1");
+                                                                $get_rd_nv_night_cashier = $cs->show_RD1_Cashier("4PM-9PM", "1");
+                                                                if ($get_nvt3_cashier) {
+                                                                    while ($result2_night_cashier = $get_nvt3_cashier->fetch_assoc()) {
+                                                                        echo $result2_night_cashier['ten'] . ",<br/>";
+                                                                    }
+                                                                } else {
+                                                                    while ($resul_rd_t2_night_cashier = $get_rd_nv_night_cashier->fetch_assoc()) {
+                                                                        echo $resul_rd_t2_night_cashier['ten'] . ",<br/>";
                                                                     }
                                                                 }
-
                                                                 ?>
                                                             </td>
 
                                                         </tr>
+
                                                         <tr>
                                                             <th scope="row">Thứ 4</th>
                                                             <td>
-                                                            <?php
+                                                                <?php
                                                                 $get_rd_t4 = $cs->show_shiftnhanvien("9AM-4PM", "1");
                                                                 $get_rd_t41nv_t4 = $cs->show_shiftnhanvienRD1("9AM-4PM", "1");
                                                                 //
@@ -471,256 +493,499 @@ include 'helpers/slug.php';
                                                                         echo $result_t4rd_t4['ten'] . ",<br/>";
                                                                     }
                                                                 }
-                                                                
+
 
                                                                 ?>
                                                             </td>
 
                                                             <td>
-                                                            <?php
+                                                                <?php
 
-$get_rdnight_t4 = $cs->show_shiftnhanvien("4PM-10PM", "1");
-$get_rd1nvnight_t4 = $cs->show_shiftnhanvienRD1("4PM-10PM", "1");
-//
-$count_nvdem_nt4 = $cs->CountGetSchedule("Thứ 4", "4PM-10PM", "1");
-// truong hop 2nv
-$rescount_nv_nt4 = $count_nvdem_nt4->fetch_assoc();
-if ($rescount_nv_nt4['nv'] == '2') {
-    $get_nv_nt4 = $cs->GetSchedule("Thứ 4", "4PM-10PM", "1");
-    while ($result_nt4 = $get_nv_nt4->fetch_assoc()) {
-        echo $result_nt4['ten'] . ",<br/>";
-    }
-}
-// truong hop 1 nv
-if ($rescount_nv_nt4['nv'] == '1') {
-    $get_nv_nt4 = $cs->GetSchedule("Thứ 4", "4PM-10PM", "1");
-    while ($result_nt4 = $get_nv_nt4->fetch_assoc()) {
-        echo $result_nt4['ten'] . ",<br/>";
-    }
-    while ($result_nt4rd_nt4 = $get_rd1nvnight_t4->fetch_assoc()) {
-        echo $result_nt4rd_nt4['ten'] . ",<br/>";
-    }
-}
-// truong hop 0 nv
-if ($rescount_nv_nt4['nv'] == '0') {
-    while ($result_nt4rd_nt4 = $get_rdnight_t4->fetch_assoc()) {
-        echo $result_nt4rd_nt4['ten'] . ",<br/>";
-    }
-}
-?>
+                                                                $get_rdnight_t4 = $cs->show_shiftnhanvien("4PM-10PM", "1");
+                                                                $get_rd1nvnight_t4 = $cs->show_shiftnhanvienRD1("4PM-10PM", "1");
+                                                                //
+                                                                $count_nvdem_nt4 = $cs->CountGetSchedule("Thứ 4", "4PM-10PM", "1");
+                                                                // truong hop 2nv
+                                                                $rescount_nv_nt4 = $count_nvdem_nt4->fetch_assoc();
+                                                                if ($rescount_nv_nt4['nv'] == '2') {
+                                                                    $get_nv_nt4 = $cs->GetSchedule("Thứ 4", "4PM-10PM", "1");
+                                                                    while ($result_nt4 = $get_nv_nt4->fetch_assoc()) {
+                                                                        echo $result_nt4['ten'] . ",<br/>";
+                                                                    }
+                                                                }
+                                                                // truong hop 1 nv
+                                                                if ($rescount_nv_nt4['nv'] == '1') {
+                                                                    $get_nv_nt4 = $cs->GetSchedule("Thứ 4", "4PM-10PM", "1");
+                                                                    while ($result_nt4 = $get_nv_nt4->fetch_assoc()) {
+                                                                        echo $result_nt4['ten'] . ",<br/>";
+                                                                    }
+                                                                    while ($result_nt4rd_nt4 = $get_rd1nvnight_t4->fetch_assoc()) {
+                                                                        echo $result_nt4rd_nt4['ten'] . ",<br/>";
+                                                                    }
+                                                                }
+                                                                // truong hop 0 nv
+                                                                if ($rescount_nv_nt4['nv'] == '0') {
+                                                                    while ($result_nt4rd_nt4 = $get_rdnight_t4->fetch_assoc()) {
+                                                                        echo $result_nt4rd_nt4['ten'] . ",<br/>";
+                                                                    }
+                                                                }
+                                                                ?>
                                                             </td>
 
                                                             <td>
                                                                 <?php
-                                                                $get_nvt4 = $cs->show_shiftCashier("10AM-4PM", "1");
-                                                                if ($get_nvt4) {
-                                                                    while ($result4 = $get_nvt4->fetch_assoc()) {
-                                                                        echo $result4['ten'] . ",<br/>";
+                                                                // morning
+                                                                $get_nvt4_cahsier = $cs->show_shiftCashier("Thứ 4", "10AM-4PM", "1");
+                                                                $get_rd_nv_t4_cashier = $cs->show_RD1_Cashier("10AM-4PM", "1");
+                                                                if ($get_nvt4_cahsier) {
+                                                                    while ($result4_cashier = $get_nvt4_cahsier->fetch_assoc()) {
+                                                                        echo $result4_cashier['ten'] . ",<br/>";
+                                                                    }
+                                                                } else {
+                                                                    while ($resul_rd_t4_cashier = $get_rd_nv_t4_cashier->fetch_assoc()) {
+                                                                        echo $resul_rd_t4_cashier['ten'] . ",<br/>";
                                                                     }
                                                                 }
-
                                                                 ?>
                                                             </td>
                                                             <td>
                                                                 <?php
-                                                                $get_nvt2494 = $cs->show_shiftCashier("4PM-9PM", "1");
-                                                                if ($get_nvt2494) {
-                                                                    while ($result2494 = $get_nvt2494->fetch_assoc()) {
-                                                                        echo $result2494['ten'] . ",<br/>";
+                                                                // night
+                                                                $get_nvt4_cashier = $cs->show_shiftCashier("Thứ 4", "4PM-9PM", "1");
+                                                                $get_rd_nv_night_cashier_t4 = $cs->show_RD1_Cashier("4PM-9PM", "1");
+                                                                if ($get_nvt4_cashier) {
+                                                                    while ($result4_night_cashier = $get_nvt4_cashier->fetch_assoc()) {
+                                                                        echo $result4_night_cashier['ten'] . ",<br/>";
+                                                                    }
+                                                                } else {
+                                                                    while ($resul_rd_t4_night_cashier = $get_rd_nv_night_cashier_t4->fetch_assoc()) {
+                                                                        echo $resul_rd_t4_night_cashier['ten'] . ",<br/>";
                                                                     }
                                                                 }
-
                                                                 ?>
                                                             </td>
 
                                                         </tr>
+
                                                         <tr>
                                                             <th scope="row">Thứ 5</th>
-                                                            <td><?php
-                                                                $get_nv5 = $cs->show_shiftnhanvien("9AM-4PM", "1");
-                                                                if ($get_nv5) {
-                                                                    while ($result5 = $get_nv5->fetch_assoc()) {
-                                                                        echo $result5['ten'] . ",<br/>";
+                                                            <td>
+                                                                <?php
+                                                                $get_rd_t5 = $cs->show_shiftnhanvien("9AM-4PM", "1");
+                                                                $get_rd_t51nv_t5 = $cs->show_shiftnhanvienRD1("9AM-4PM", "1");
+                                                                //
+                                                                $count_nv_t5s = $cs->CountGetSchedule("Thứ 5", "9AM-4PM", "1");
+                                                                // truong hop 2nv
+                                                                $rescount_nv_st5 = $count_nv_t5s->fetch_assoc();
+                                                                if ($rescount_nv_st5['nv'] == '2') {
+                                                                    $get_nv_t5 = $cs->GetSchedule("Thứ 5", "9AM-4PM", "1");
+                                                                    while ($result_st5 = $get_nv_t5->fetch_assoc()) {
+                                                                        echo $result_st5['ten'] . ",<br/>";
+                                                                    }
+                                                                }
+                                                                // truong hop 1 nv
+                                                                if ($rescount_nv_st5['nv'] == '1') {
+                                                                    $get_nv_t5 = $cs->GetSchedule("Thứ 5", "9AM-4PM", "1");
+                                                                    while ($result_st5 = $get_nv_t5->fetch_assoc()) {
+                                                                        echo $result_st5['ten'] . ",<br/>";
+                                                                    }
+                                                                    while ($result_st5rd_st5 = $get_rd_t51nv_t5->fetch_assoc()) {
+                                                                        echo $result_st5rd_st5['ten'] . ",<br/>";
+                                                                    }
+                                                                }
+                                                                // truong hop 0 nv
+                                                                if ($rescount_nv_st5['nv'] == '0') {
+                                                                    while ($result_st5rd_st5 = $get_rd_t5->fetch_assoc()) {
+                                                                        echo $result_st5rd_st5['ten'] . ",<br/>";
+                                                                    }
+                                                                }
+
+
+                                                                ?>
+                                                            </td>
+                                                            <td>
+                                                                <?php
+
+                                                                $get_rdnight_t5 = $cs->show_shiftnhanvien("4PM-10PM", "1");
+                                                                $get_rd1nvnightt5 = $cs->show_shiftnhanvienRD1("4PM-10PM", "1");
+                                                                //
+                                                                $count_nvdemt5 = $cs->CountGetSchedule("Thứ 5", "4PM-10PM", "1");
+                                                                // truong hop 2nv
+                                                                $rescount_nvt5 = $count_nvdemt5->fetch_assoc();
+                                                                if ($rescount_nvt5['nv'] == '2') {
+                                                                    $get_nv_t5 = $cs->GetSchedule("Thứ 5", "4PM-10PM", "1");
+                                                                    while ($t5result = $get_nv_t5->fetch_assoc()) {
+                                                                        echo $t5result['ten'] . ",<br/>";
+                                                                    }
+                                                                }
+                                                                // truong hop 1 nv
+                                                                if ($rescount_nvt5['nv'] == '1') {
+                                                                    $get_nv_t5 = $cs->GetSchedule("Thứ 5", "4PM-10PM", "1");
+                                                                    while ($t5result = $get_nv_t5->fetch_assoc()) {
+                                                                        echo $t5result['ten'] . ",<br/>";
+                                                                    }
+                                                                    while ($t5resultrd = $get_rd1nvnightt5->fetch_assoc()) {
+                                                                        echo $t5resultrd['ten'] . ",<br/>";
+                                                                    }
+                                                                }
+                                                                // truong hop 0 nv
+                                                                if ($rescount_nvt5['nv'] == '0') {
+                                                                    while ($t5resultrd = $get_rdnight_t5->fetch_assoc()) {
+                                                                        echo $t5resultrd['ten'] . ",<br/>";
+                                                                    }
+                                                                }
+
+                                                                ?>
+                                                            </td>
+
+                                                            <td>
+                                                                <?php
+                                                                // morning
+                                                                $get_nvt5_cahsier = $cs->show_shiftCashier("Thứ 5", "10AM-4PM", "1");
+                                                                $get_rd_nv_t5_cashier = $cs->show_RD1_Cashier("10AM-4PM", "1");
+                                                                if ($get_nvt5_cahsier) {
+                                                                    while ($result5_cashier = $get_nvt5_cahsier->fetch_assoc()) {
+                                                                        echo $result5_cashier['ten'] . ",<br/>";
+                                                                    }
+                                                                } else {
+                                                                    while ($resul_rd_t5_cashier = $get_rd_nv_t5_cashier->fetch_assoc()) {
+                                                                        echo $resul_rd_t5_cashier['ten'] . ",<br/>";
                                                                     }
                                                                 }
                                                                 ?>
                                                             </td>
                                                             <td>
                                                                 <?php
-                                                                $get_nv4105 = $cs->show_shiftnhanvien("4PM-10PM", "1");
-                                                                if ($get_nv4105) {
-                                                                    while ($result4105 = $get_nv4105->fetch_assoc()) {
-                                                                        echo $result4105['ten'] . ",<br/>";
+                                                                // night
+                                                                $get_nvt5_cashier = $cs->show_shiftCashier("Thứ 5", "4PM-9PM", "1");
+                                                                $get_rd_nv_night_cashier_t5 = $cs->show_RD1_Cashier("4PM-9PM", "1");
+                                                                if ($get_nvt5_cashier) {
+                                                                    while ($result5_night_cashier = $get_nvt5_cashier->fetch_assoc()) {
+                                                                        echo $result5_night_cashier['ten'] . ",<br/>";
+                                                                    }
+                                                                } else {
+                                                                    while ($resul_rd_t5_night_cashier = $get_rd_nv_night_cashier_t5->fetch_assoc()) {
+                                                                        echo $resul_rd_t5_night_cashier['ten'] . ",<br/>";
                                                                     }
                                                                 }
-
-                                                                ?>
-                                                            </td>
-                                                            <td>
-                                                                <?php
-                                                                $get_nvt5 = $cs->show_shiftCashier("10AM-4PM", "1");
-                                                                if ($get_nvt5) {
-                                                                    while ($result5 = $get_nvt5->fetch_assoc()) {
-                                                                        echo $result5['ten'] . ",<br/>";
-                                                                    }
-                                                                }
-
-                                                                ?>
-                                                            </td>
-                                                            <td>
-                                                                <?php
-                                                                $get_nvt2495 = $cs->show_shiftCashier("4PM-9PM", "1");
-                                                                if ($get_nvt2495) {
-                                                                    while ($result2495 = $get_nvt2495->fetch_assoc()) {
-                                                                        echo $result2495['ten'] . ",<br/>";
-                                                                    }
-                                                                }
-
                                                                 ?>
                                                             </td>
 
                                                         </tr>
+
                                                         <tr>
                                                             <th scope="row">Thứ 6</th>
                                                             <td>
                                                                 <?php
-                                                                $get_nv6 = $cs->show_shiftnhanvien("9AM-4PM", "1");
-                                                                if ($get_nv6) {
-                                                                    while ($result6 = $get_nv6->fetch_assoc()) {
-                                                                        echo $result6['ten'] . ",<br/>";
+                                                                $get_rd_t6 = $cs->show_shiftnhanvien("9AM-4PM", "1");
+                                                                $get_rd_t61nv_t6 = $cs->show_shiftnhanvienRD1("9AM-4PM", "1");
+                                                                //
+                                                                $count_nv_t6s = $cs->CountGetSchedule("Thứ 6", "9AM-4PM", "1");
+                                                                // truong hop 2nv
+                                                                $rescount_nv_st6 = $count_nv_t6s->fetch_assoc();
+                                                                if ($rescount_nv_st6['nv'] == '2') {
+                                                                    $get_nv_t6 = $cs->GetSchedule("Thứ 6", "9AM-4PM", "1");
+                                                                    while ($result_st6 = $get_nv_t6->fetch_assoc()) {
+                                                                        echo $result_st6['ten'] . ",<br/>";
+                                                                    }
+                                                                }
+                                                                // truong hop 1 nv
+                                                                if ($rescount_nv_st6['nv'] == '1') {
+                                                                    $get_nv_t6 = $cs->GetSchedule("Thứ 6", "9AM-4PM", "1");
+                                                                    while ($result_st6 = $get_nv_t6->fetch_assoc()) {
+                                                                        echo $result_st6['ten'] . ",<br/>";
+                                                                    }
+                                                                    while ($result_st6rd_t6 = $get_rd_t61nv_t6->fetch_assoc()) {
+                                                                        echo $result_st6rd_t6['ten'] . ",<br/>";
+                                                                    }
+                                                                }
+                                                                // truong hop 0 nv
+                                                                if ($rescount_nv_st6['nv'] == '0') {
+                                                                    while ($result_st6rd_t6 = $get_rd_t6->fetch_assoc()) {
+                                                                        echo $result_st6rd_t6['ten'] . ",<br/>";
+                                                                    }
+                                                                }
+
+
+                                                                ?>
+                                                            </td>
+                                                            <td>
+                                                                <?php
+
+                                                                $get_rdnight_t6 = $cs->show_shiftnhanvien("4PM-10PM", "1");
+                                                                $get_rd1nvnightt6 = $cs->show_shiftnhanvienRD1("4PM-10PM", "1");
+                                                                //
+                                                                $count_nvdemt6 = $cs->CountGetSchedule("Thứ 6", "4PM-10PM", "1");
+                                                                // truong hop 2nv
+                                                                $rescount_nvt6 = $count_nvdemt6->fetch_assoc();
+                                                                if ($rescount_nvt6['nv'] == '2') {
+                                                                    $get_nv_t6 = $cs->GetSchedule("Thứ 6", "4PM-10PM", "1");
+                                                                    while ($t6result = $get_nv_t6->fetch_assoc()) {
+                                                                        echo $t6result['ten'] . ",<br/>";
+                                                                    }
+                                                                }
+                                                                // truong hop 1 nv
+                                                                if ($rescount_nvt6['nv'] == '1') {
+                                                                    $get_nv_t6 = $cs->GetSchedule("Thứ 6", "4PM-10PM", "1");
+                                                                    while ($t6result = $get_nv_t6->fetch_assoc()) {
+                                                                        echo $t6result['ten'] . ",<br/>";
+                                                                    }
+                                                                    while ($t6resultrd = $get_rd1nvnightt6->fetch_assoc()) {
+                                                                        echo $t6resultrd['ten'] . ",<br/>";
+                                                                    }
+                                                                }
+                                                                // truong hop 0 nv
+                                                                if ($rescount_nvt6['nv'] == '0') {
+                                                                    while ($t6resultrd = $get_rdnight_t6->fetch_assoc()) {
+                                                                        echo $t6resultrd['ten'] . ",<br/>";
+                                                                    }
+                                                                }
+
+                                                                ?>
+                                                            </td>
+
+                                                            <td>
+                                                                <?php
+                                                                // morning
+                                                                $get_nvt6_cahsier = $cs->show_shiftCashier("Thứ 6", "10AM-4PM", "1");
+                                                                $get_rd_nv_t6_cashier = $cs->show_RD1_Cashier("10AM-4PM", "1");
+                                                                if ($get_nvt6_cahsier) {
+                                                                    while ($result6_cashier = $get_nvt6_cahsier->fetch_assoc()) {
+                                                                        echo $result6_cashier['ten'] . ",<br/>";
+                                                                    }
+                                                                } else {
+                                                                    while ($resul_rd_t6_cashier = $get_rd_nv_t6_cashier->fetch_assoc()) {
+                                                                        echo $resul_rd_t6_cashier['ten'] . ",<br/>";
                                                                     }
                                                                 }
                                                                 ?>
                                                             </td>
                                                             <td>
                                                                 <?php
-                                                                $get_nv4106 = $cs->show_shiftnhanvien("4PM-10PM", "1");
-                                                                if ($get_nv4106) {
-                                                                    while ($result4106 = $get_nv4106->fetch_assoc()) {
-                                                                        echo $result4106['ten'] . ",<br/>";
+                                                                // night
+                                                                $get_nvt6_cashier = $cs->show_shiftCashier("Thứ 6", "4PM-9PM", "1");
+                                                                $get_rd_nv_night_cashier_t6 = $cs->show_RD1_Cashier("4PM-9PM", "1");
+                                                                if ($get_nvt6_cashier) {
+                                                                    while ($result6_night_cashier = $get_nvt6_cashier->fetch_assoc()) {
+                                                                        echo $result6_night_cashier['ten'] . ",<br/>";
+                                                                    }
+                                                                } else {
+                                                                    while ($resul_rd_t6_night_cashier = $get_rd_nv_night_cashier_t6->fetch_assoc()) {
+                                                                        echo $resul_rd_t6_night_cashier['ten'] . ",<br/>";
                                                                     }
                                                                 }
-
-                                                                ?>
-                                                            </td>
-                                                            <td>
-                                                                <?php
-                                                                $get_nvt6 = $cs->show_shiftCashier("10AM-4PM", "1");
-                                                                if ($get_nvt6) {
-                                                                    while ($result6 = $get_nvt6->fetch_assoc()) {
-                                                                        echo $result6['ten'] . ",<br/>";
-                                                                    }
-                                                                }
-
-                                                                ?>
-                                                            </td>
-                                                            <td>
-                                                                <?php
-                                                                $get_nvt2496 = $cs->show_shiftCashier("4PM-9PM", "1");
-                                                                if ($get_nvt2496) {
-                                                                    while ($result2496 = $get_nvt2496->fetch_assoc()) {
-                                                                        echo $result2496['ten'] . ",<br/>";
-                                                                    }
-                                                                }
-
                                                                 ?>
                                                             </td>
 
                                                         </tr>
+
                                                         <tr>
                                                             <th scope="row">Thứ 7</th>
                                                             <td>
                                                                 <?php
-                                                                $get_nv7 = $cs->show_shiftnhanvien("9AM-4PM", "1");
-                                                                if ($get_nv7) {
-                                                                    while ($result7 = $get_nv7->fetch_assoc()) {
-                                                                        echo $result7['ten'] . ",<br/>";
+                                                                $get_rd_t7 = $cs->show_shiftnhanvien("9AM-4PM", "1");
+                                                                $get_rd_t71nv_t7 = $cs->show_shiftnhanvienRD1("9AM-4PM", "1");
+                                                                //
+                                                                $count_nv_t7s = $cs->CountGetSchedule("Thứ 7", "9AM-4PM", "1");
+                                                                // truong hop 2nv
+                                                                $rescount_nv_st7 = $count_nv_t7s->fetch_assoc();
+                                                                if ($rescount_nv_st7['nv'] == '2') {
+                                                                    $get_nv_t7 = $cs->GetSchedule("Thứ 7", "9AM-4PM", "1");
+                                                                    while ($result_st7 = $get_nv_t7->fetch_assoc()) {
+                                                                        echo $result_st7['ten'] . ",<br/>";
+                                                                    }
+                                                                }
+                                                                // truong hop 1 nv
+                                                                if ($rescount_nv_st7['nv'] == '1') {
+                                                                    $get_nv_t7 = $cs->GetSchedule("Thứ 7", "9AM-4PM", "1");
+                                                                    while ($result_st7 = $get_nv_t7->fetch_assoc()) {
+                                                                        echo $result_st7['ten'] . ",<br/>";
+                                                                    }
+                                                                    while ($result_st7rd_t7 = $get_rd_t71nv_t7->fetch_assoc()) {
+                                                                        echo $result_st7rd_t7['ten'] . ",<br/>";
+                                                                    }
+                                                                }
+                                                                // truong hop 0 nv
+                                                                if ($rescount_nv_st7['nv'] == '0') {
+                                                                    while ($result_st7rd_t7 = $get_rd_t7->fetch_assoc()) {
+                                                                        echo $result_st7rd_t7['ten'] . ",<br/>";
                                                                     }
                                                                 }
                                                                 ?>
                                                             </td>
                                                             <td>
                                                                 <?php
-                                                                $get_nv4107 = $cs->show_shiftnhanvien("4PM-10PM", "1");
-                                                                if ($get_nv4107) {
-                                                                    while ($result4107 = $get_nv4107->fetch_assoc()) {
-                                                                        echo $result4107['ten'] . ",<br/>";
+
+                                                                $get_rdnight_t7 = $cs->show_shiftnhanvien("4PM-10PM", "1");
+                                                                $get_rd1nvnightt7 = $cs->show_shiftnhanvienRD1("4PM-10PM", "1");
+                                                                //
+                                                                $count_nvdemt7 = $cs->CountGetSchedule("Thứ 7", "4PM-10PM", "1");
+                                                                // truong hop 2nv
+                                                                $rescount_nvt7 = $count_nvdemt7->fetch_assoc();
+                                                                if ($rescount_nvt7['nv'] == '2') {
+                                                                    $get_nv_t7 = $cs->GetSchedule("Thứ 7", "4PM-10PM", "1");
+                                                                    while ($t7result = $get_nv_t7->fetch_assoc()) {
+                                                                        echo $t7result['ten'] . ",<br/>";
+                                                                    }
+                                                                }
+                                                                // truong hop 1 nv
+                                                                if ($rescount_nvt7['nv'] == '1') {
+                                                                    $get_nv_t7 = $cs->GetSchedule("Thứ 7", "4PM-10PM", "1");
+                                                                    while ($t7result = $get_nv_t7->fetch_assoc()) {
+                                                                        echo $t7result['ten'] . ",<br/>";
+                                                                    }
+                                                                    while ($t7resultrd = $get_rd1nvnightt7->fetch_assoc()) {
+                                                                        echo $t7resultrd['ten'] . ",<br/>";
+                                                                    }
+                                                                }
+                                                                // truong hop 0 nv
+                                                                if ($rescount_nvt7['nv'] == '0') {
+                                                                    while ($t7resultrd = $get_rdnight_t7->fetch_assoc()) {
+                                                                        echo $t7resultrd['ten'] . ",<br/>";
                                                                     }
                                                                 }
 
                                                                 ?>
                                                             </td>
+
                                                             <td>
                                                                 <?php
-                                                                $get_nvt7 = $cs->show_shiftCashier("10AM-4PM", "1");
-                                                                if ($get_nvt7) {
-                                                                    while ($result7 = $get_nvt7->fetch_assoc()) {
-                                                                        echo $result7['ten'] . ",<br/>";
+                                                                // morning
+                                                                $get_nvt7_cahsier = $cs->show_shiftCashier("Thứ 7", "10AM-4PM", "1");
+                                                                $get_rd_nv_t7_cashier = $cs->show_RD1_Cashier("10AM-4PM", "1");
+                                                                if ($get_nvt7_cahsier) {
+                                                                    while ($result7_cashier = $get_nvt7_cahsier->fetch_assoc()) {
+                                                                        echo $result7_cashier['ten'] . ",<br/>";
+                                                                    }
+                                                                } else {
+                                                                    while ($resul_rd_t7_cashier = $get_rd_nv_t7_cashier->fetch_assoc()) {
+                                                                        echo $resul_rd_t7_cashier['ten'] . ",<br/>";
                                                                     }
                                                                 }
-
                                                                 ?>
                                                             </td>
                                                             <td>
                                                                 <?php
-                                                                $get_nvt2497 = $cs->show_shiftCashier("4PM-9PM", "1");
-                                                                if ($get_nvt2497) {
-                                                                    while ($result2497 = $get_nvt2497->fetch_assoc()) {
-                                                                        echo $result2497['ten'] . ",<br/>";
+                                                                // night
+                                                                $get_nvt7_cashier = $cs->show_shiftCashier("Thứ 7", "4PM-9PM", "1");
+                                                                $get_rd_nv_night_cashier_t7 = $cs->show_RD1_Cashier("4PM-9PM", "1");
+                                                                if ($get_nvt7_cashier) {
+                                                                    while ($result7_night_cashier = $get_nvt7_cashier->fetch_assoc()) {
+                                                                        echo $result7_night_cashier['ten'] . ",<br/>";
+                                                                    }
+                                                                } else {
+                                                                    while ($resul_rd_t7_night_cashier = $get_rd_nv_night_cashier_t7->fetch_assoc()) {
+                                                                        echo $resul_rd_t7_night_cashier['ten'] . ",<br/>";
                                                                     }
                                                                 }
-
                                                                 ?>
                                                             </td>
 
                                                         </tr>
+
                                                         <tr>
                                                             <th scope="row">Chủ nhật</th>
                                                             <td>
                                                                 <?php
-                                                                $get_nv44 = $cs->show_shiftnhanvien("9AM-4PM", "1");
-                                                                if ($get_nv44) {
-                                                                    while ($result44 = $get_nv44->fetch_assoc()) {
-                                                                        echo $result44['ten'] . ",<br/>";
+                                                                $get_rd_cn = $cs->show_shiftnhanvien("9AM-4PM", "1");
+                                                                $get_rd_cn1nv_cn = $cs->show_shiftnhanvienRD1("9AM-4PM", "1");
+                                                                //
+                                                                $count_nv_cns = $cs->CountGetSchedule("Chủ nhật", "9AM-4PM", "1");
+                                                                // truong hop 2nv
+                                                                $rescount_nv_scn = $count_nv_cns->fetch_assoc();
+                                                                if ($rescount_nv_scn['nv'] == '2') {
+                                                                    $get_nv_cn = $cs->GetSchedule("Chủ nhật", "9AM-4PM", "1");
+                                                                    while ($result_scn = $get_nv_cn->fetch_assoc()) {
+                                                                        echo $result_scn['ten'] . ",<br/>";
+                                                                    }
+                                                                }
+                                                                // truong hop 1 nv
+                                                                if ($rescount_nv_scn['nv'] == '1') {
+                                                                    $get_nv_cn = $cs->GetSchedule("Chủ nhật", "9AM-4PM", "1");
+                                                                    while ($result_scn = $get_nv_cn->fetch_assoc()) {
+                                                                        echo $result_scn['ten'] . ",<br/>";
+                                                                    }
+                                                                    while ($result_scnrd_cn = $get_rd_cn1nv_cn->fetch_assoc()) {
+                                                                        echo $result_scnrd_cn['ten'] . ",<br/>";
+                                                                    }
+                                                                }
+                                                                // truong hop 0 nv
+                                                                if ($rescount_nv_scn['nv'] == '0') {
+                                                                    while ($result_scnrd_cn = $get_rd_cn->fetch_assoc()) {
+                                                                        echo $result_scnrd_cn['ten'] . ",<br/>";
                                                                     }
                                                                 }
                                                                 ?>
                                                             </td>
                                                             <td>
                                                                 <?php
-                                                                $get_nv410cn = $cs->show_shiftnhanvien("4PM-10PM", "1");
-                                                                if ($get_nv410cn) {
-                                                                    while ($result410cn = $get_nv410cn->fetch_assoc()) {
-                                                                        echo $result410cn['ten'] . ",<br/>";
+
+                                                                $get_rdnight_cn = $cs->show_shiftnhanvien("4PM-10PM", "1");
+                                                                $get_rd1nvnightcn = $cs->show_shiftnhanvienRD1("4PM-10PM", "1");
+                                                                //
+                                                                $count_nvdemCN = $cs->CountGetSchedule("Chủ nhật", "4PM-10PM", "1");
+                                                                // truong hop 2nv
+                                                                $rescount_nvcn = $count_nvdemCN->fetch_assoc();
+                                                                if ($rescount_nvcn['nv'] == '2') {
+                                                                    $get_nv_cn = $cs->GetSchedule("Chủ nhật", "4PM-10PM", "1");
+                                                                    while ($CNresult = $get_nv_cn->fetch_assoc()) {
+                                                                        echo $CNresult['ten'] . ",<br/>";
+                                                                    }
+                                                                }
+                                                                // truong hop 1 nv
+                                                                if ($rescount_nvcn['nv'] == '1') {
+                                                                    $get_nv_cn = $cs->GetSchedule("Chủ nhật", "4PM-10PM", "1");
+                                                                    while ($CNresult = $get_nv_cn->fetch_assoc()) {
+                                                                        echo $CNresult['ten'] . ",<br/>";
+                                                                    }
+                                                                    while ($CNresultrd = $get_rd1nvnightcn->fetch_assoc()) {
+                                                                        echo $CNresultrd['ten'] . ",<br/>";
+                                                                    }
+                                                                }
+                                                                // truong hop 0 nv
+                                                                if ($rescount_nvcn['nv'] == '0') {
+                                                                    while ($CNresultrd = $get_rdnight_cn->fetch_assoc()) {
+                                                                        echo $CNresultrd['ten'] . ",<br/>";
                                                                     }
                                                                 }
 
                                                                 ?>
                                                             </td>
+                                                           
                                                             <td>
                                                                 <?php
-                                                                $get_nvt33 = $cs->show_shiftCashier("10AM-4PM", "1");
-                                                                if ($get_nvt33) {
-                                                                    while ($result33 = $get_nvt33->fetch_assoc()) {
-                                                                        echo $result33['ten'] . ",<br/>";
+                                                                // morning
+                                                                $get_nvcn_cahsier = $cs->show_shiftCashier("Chủ nhật", "10AM-4PM", "1");
+                                                                $get_rd_nv_cn_cashier = $cs->show_RD1_Cashier("10AM-4PM", "1");
+                                                                if ($get_nvcn_cahsier) {
+                                                                    while ($resulcn_cashier = $get_nvcn_cahsier->fetch_assoc()) {
+                                                                        echo $resulcn_cashier['ten'] . ",<br/>";
+                                                                    }
+                                                                } else {
+                                                                    while ($resul_rd_cn_cashier = $get_rd_nv_cn_cashier->fetch_assoc()) {
+                                                                        echo $resul_rd_cn_cashier['ten'] . ",<br/>";
                                                                     }
                                                                 }
-
                                                                 ?>
                                                             </td>
-
                                                             <td>
                                                                 <?php
-                                                                $get_nvt2499 = $cs->show_shiftCashier("4PM-9PM", "1");
-                                                                if ($get_nvt2499) {
-                                                                    while ($result2499 = $get_nvt2499->fetch_assoc()) {
-                                                                        echo $result2499['ten'] . ",<br/>";
+                                                                // night
+                                                                $get_nvcn_cashier = $cs->show_shiftCashier("Chủ nhật", "4PM-9PM", "1");
+                                                                $get_rd_nv_night_cashier_cn = $cs->show_RD1_Cashier("4PM-9PM", "1");
+                                                                if ($get_nvcn_cashier) {
+                                                                    while ($resulcn_night_cashier = $get_nvcn_cashier->fetch_assoc()) {
+                                                                        echo $resulcn_night_cashier['ten'] . ",<br/>";
+                                                                    }
+                                                                } else {
+                                                                    while ($resul_rd_cn_night_cashier = $get_rd_nv_night_cashier_cn->fetch_assoc()) {
+                                                                        echo $resul_rd_cn_night_cashier['ten'] . ",<br/>";
                                                                     }
                                                                 }
-
                                                                 ?>
                                                             </td>
                                                         </tr>
+
                                                     </tbody>
                                                 </table>
 
@@ -740,22 +1005,65 @@ if ($rescount_nv_nt4['nv'] == '0') {
                                                             <th scope="row">Thứ 2</th>
                                                             <td>
                                                                 <?php
-                                                                $nvt2 = $cs->show_shiftnhanvien("9AM-4PM", "2");
-                                                                if ($nvt2) {
-                                                                    while ($kqt2 = $nvt2->fetch_assoc()) {
-                                                                        echo $kqt2['ten'] . ",<br/>";
+                                                                $get_rd_team2_t2 = $cs->show_shiftnhanvien("9AM-4PM", "2");
+                                                                $get_rd_1nv_team2 = $cs->show_shiftnhanvienRD1("9AM-4PM", "2");
+                                                                //
+                                                                $count_nv_team2 = $cs->CountGetSchedule("Thứ 2", "9AM-4PM", "2");
+                                                                // truong hop 2nv
+                                                                $rescount_nv_team2 = $count_nv_team2->fetch_assoc();
+                                                                if ($rescount_nv_team2['nv'] == '2') {
+                                                                    $get_nv_team2 = $cs->GetSchedule("Thứ 2", "9AM-4PM", "2");
+                                                                    while ($result_steam2 = $get_nv_team2->fetch_assoc()) {
+                                                                        echo $result_steam2['ten'] . ",<br/>";
                                                                     }
                                                                 }
-
+                                                                // truong hop 1 nv
+                                                                if ($rescount_nv_team2['nv'] == '1') {
+                                                                    $get_nv_team2 = $cs->GetSchedule("Thứ 2", "9AM-4PM", "2");
+                                                                    while ($result_steam2 = $get_nv_team2->fetch_assoc()) {
+                                                                        echo $result_steam2['ten'] . ",<br/>";
+                                                                    }
+                                                                    while ($result_steam2rd_team2 = $get_rd_1nv_team2->fetch_assoc()) {
+                                                                        echo $result_steam2rd_team2['ten'] . ",<br/>";
+                                                                    }
+                                                                }
+                                                                // truong hop 0 nv
+                                                                if ($rescount_nv_team2['nv'] == '0') {
+                                                                    while ($result_steam2rd_team2 = $get_rd_team2_t2->fetch_assoc()) {
+                                                                        echo $result_steam2rd_team2['ten'] . ",<br/>";
+                                                                    }
+                                                                }
                                                                 ?>
                                                             </td>
 
                                                             <td>
                                                                 <?php
-                                                                $get_nv410t2 = $cs->show_shiftnhanvien("4PM-10PM", "2");
-                                                                if ($get_nv410t2) {
-                                                                    while ($result410t2 = $get_nv410t2->fetch_assoc()) {
-                                                                        echo $result410t2['ten'] . ",<br/>";
+                                                                $get_rdnight_team2 = $cs->show_shiftnhanvien("4PM-10PM", "2");
+                                                                $get_rd1nv_night_team2 = $cs->show_shiftnhanvienRD1("4PM-10PM", "2");
+                                                                //
+                                                                $count_nvdem_team2 = $cs->CountGetSchedule("Thứ 2", "4PM-10PM", "2");
+                                                                // truong hop 2nv
+                                                                $rescount_nv_team2 = $count_nvdem_team2->fetch_assoc();
+                                                                if ($rescount_nv_team2['nv'] == '2') {
+                                                                    $get_nv_team2 = $cs->GetSchedule("Thứ 2", "4PM-10PM", "2");
+                                                                    while ($result_team2_ = $get_nv_team2->fetch_assoc()) {
+                                                                        echo $result_team2_['ten'] . ",<br/>";
+                                                                    }
+                                                                }
+                                                                // truong hop 1 nv
+                                                                if ($rescount_nv_team2['nv'] == '1') {
+                                                                    $get_nv_team2 = $cs->GetSchedule("Thứ 2", "4PM-10PM", "2");
+                                                                    while ($result_team2_ = $get_nv_team2->fetch_assoc()) {
+                                                                        echo $result_team2_['ten'] . ",<br/>";
+                                                                    }
+                                                                    while ($result_team2_rd = $get_rd1nv_night_team2->fetch_assoc()) {
+                                                                        echo $result_team2_rd['ten'] . ",<br/>";
+                                                                    }
+                                                                }
+                                                                // truong hop 0 nv
+                                                                if ($rescount_nv_team2['nv'] == '0') {
+                                                                    while ($result_team2_rd = $get_rdnight_team2->fetch_assoc()) {
+                                                                        echo $result_team2_rd['ten'] . ",<br/>";
                                                                     }
                                                                 }
 
@@ -789,21 +1097,64 @@ if ($rescount_nv_nt4['nv'] == '0') {
                                                             <th scope="row">Thứ 3</th>
                                                             <td>
                                                                 <?php
-                                                                $nvt23t3 = $cs->show_shiftnhanvien("9AM-4PM", "2");
-                                                                if ($nvt23t3) {
-                                                                    while ($kqt23t3 = $nvt23t3->fetch_assoc()) {
-                                                                        echo $kqt23t3['ten'] . ",<br/>";
+                                                                $get_rd_team2_t3 = $cs->show_shiftnhanvien("9AM-4PM", "2");
+                                                                $get_rd_1nv_team2_t3 = $cs->show_shiftnhanvienRD1("9AM-4PM", "2");
+                                                                //
+                                                                $count_nv_team2_t3 = $cs->CountGetSchedule("Thứ 3", "9AM-4PM", "2");
+                                                                // truong hop 2nv
+                                                                $rescount_nv_team2_t3 = $count_nv_team2_t3->fetch_assoc();
+                                                                if ($rescount_nv_team2_t3['nv'] == '2') {
+                                                                    $get_nv_team2_t3 = $cs->GetSchedule("Thứ 3", "9AM-4PM", "2");
+                                                                    while ($result_team2_t3 = $get_nv_team2_t3->fetch_assoc()) {
+                                                                        echo $result_team2_t3['ten'] . ",<br/>";
                                                                     }
                                                                 }
-
+                                                                // truong hop 1 nv
+                                                                if ($rescount_nv_team2_t3['nv'] == '1') {
+                                                                    $get_nv_team2_t3 = $cs->GetSchedule("Thứ 3", "9AM-4PM", "2");
+                                                                    while ($result_team2_t3 = $get_nv_team2_t3->fetch_assoc()) {
+                                                                        echo $result_team2_t3['ten'] . ",<br/>";
+                                                                    }
+                                                                    while ($result_rd_team2_t3 = $get_rd_1nv_team2_t3->fetch_assoc()) {
+                                                                        echo $result_rd_team2_t3['ten'] . ",<br/>";
+                                                                    }
+                                                                }
+                                                                // truong hop 0 nv
+                                                                if ($rescount_nv_team2_t3['nv'] == '0') {
+                                                                    while ($result_rd_team2_t3 = $get_rd_team2_t3->fetch_assoc()) {
+                                                                        echo $result_rd_team2_t3['ten'] . ",<br/>";
+                                                                    }
+                                                                }
                                                                 ?>
                                                             </td>
                                                             <td>
                                                                 <?php
-                                                                $get_nv4100t3 = $cs->show_shiftnhanvien("4PM-10PM", "2");
-                                                                if ($get_nv4100t3) {
-                                                                    while ($result4100t3 = $get_nv4100t3->fetch_assoc()) {
-                                                                        echo $result4100t3['ten'] . ",<br/>";
+                                                                $get_rdnight_team2n_t3 = $cs->show_shiftnhanvien("4PM-10PM", "2");
+                                                                $get_rd1nv_night_team2_t3 = $cs->show_shiftnhanvienRD1("4PM-10PM", "2");
+                                                                //
+                                                                $count_nvdem_nteam2_t3 = $cs->CountGetSchedule("Thứ 3", "4PM-10PM", "2");
+                                                                // truong hop 2nv
+                                                                $rescount_nv_team2n_t3 = $count_nvdem_nteam2_t3->fetch_assoc();
+                                                                if ($rescount_nv_team2n_t3['nv'] == '2') {
+                                                                    $get_nv_team2n_t3 = $cs->GetSchedule("Thứ 3", "4PM-10PM", "2");
+                                                                    while ($result_team2_nt3 = $get_nv_team2n_t3->fetch_assoc()) {
+                                                                        echo $result_team2_nt3['ten'] . ",<br/>";
+                                                                    }
+                                                                }
+                                                                // truong hop 1 nv
+                                                                if ($rescount_nv_team2n_t3['nv'] == '1') {
+                                                                    $get_nv_team2n_t3 = $cs->GetSchedule("Thứ 3", "4PM-10PM", "2");
+                                                                    while ($result_team2_nt3 = $get_nv_team2n_t3->fetch_assoc()) {
+                                                                        echo $result_team2_nt3['ten'] . ",<br/>";
+                                                                    }
+                                                                    while ($result_team2_rd_nt3 = $get_rd1nv_night_team2_t3->fetch_assoc()) {
+                                                                        echo $result_team2_rd_nt3['ten'] . ",<br/>";
+                                                                    }
+                                                                }
+                                                                // truong hop 0 nv
+                                                                if ($rescount_nv_team2n_t3['nv'] == '0') {
+                                                                    while ($result_team2_rd_nt3 = $get_rdnight_team2n_t3->fetch_assoc()) {
+                                                                        echo $result_team2_rd_nt3['ten'] . ",<br/>";
                                                                     }
                                                                 }
 
@@ -838,19 +1189,64 @@ if ($rescount_nv_nt4['nv'] == '0') {
                                                             <th scope="row">Thứ 4</th>
                                                             <td>
                                                                 <?php
-                                                                $get_nv4t4 = $cs->show_shiftnhanvien("9AM-4PM", "2");
-                                                                while ($result4t4 = $get_nv4t4->fetch_assoc()) {
-                                                                    echo $result4t4['ten'] . ",<br/>";
+                                                                $get_rd_team2_t4 = $cs->show_shiftnhanvien("9AM-4PM", "2");
+                                                                $get_rd_1nv_team2_t4 = $cs->show_shiftnhanvienRD1("9AM-4PM", "2");
+                                                                //
+                                                                $count_nv_team2_t4 = $cs->CountGetSchedule("Thứ 4", "9AM-4PM", "2");
+                                                                // truong hop 2nv
+                                                                $rescount_nv_team2_t4 = $count_nv_team2_t4->fetch_assoc();
+                                                                if ($rescount_nv_team2_t4['nv'] == '2') {
+                                                                    $get_nv_team2_t4 = $cs->GetSchedule("Thứ 4", "9AM-4PM", "2");
+                                                                    while ($result_team2_t4 = $get_nv_team2_t4->fetch_assoc()) {
+                                                                        echo $result_team2_t4['ten'] . ",<br/>";
+                                                                    }
                                                                 }
-
+                                                                // truong hop 1 nv
+                                                                if ($rescount_nv_team2_t4['nv'] == '1') {
+                                                                    $get_nv_team2_t4 = $cs->GetSchedule("Thứ 4", "9AM-4PM", "2");
+                                                                    while ($result_team2_t4 = $get_nv_team2_t4->fetch_assoc()) {
+                                                                        echo $result_team2_t4['ten'] . ",<br/>";
+                                                                    }
+                                                                    while ($result_rd_team2_t4 = $get_rd_1nv_team2_t4->fetch_assoc()) {
+                                                                        echo $result_rd_team2_t4['ten'] . ",<br/>";
+                                                                    }
+                                                                }
+                                                                // truong hop 0 nv
+                                                                if ($rescount_nv_team2_t4['nv'] == '0') {
+                                                                    while ($result_rd_team2_t4 = $get_rd_team2_t4->fetch_assoc()) {
+                                                                        echo $result_rd_team2_t4['ten'] . ",<br/>";
+                                                                    }
+                                                                }
                                                                 ?>
                                                             </td>
                                                             <td>
                                                                 <?php
-                                                                $get_nv4104t4 = $cs->show_shiftnhanvien("4PM-10PM", "2");
-                                                                if ($get_nv4104t4) {
-                                                                    while ($result4104t4 = $get_nv4104t4->fetch_assoc()) {
-                                                                        echo $result4104t4['ten'] . ",<br/>";
+                                                                $get_rdnight_team2n_t4 = $cs->show_shiftnhanvien("4PM-10PM", "2");
+                                                                $get_rd1nv_night_team2_t4 = $cs->show_shiftnhanvienRD1("4PM-10PM", "2");
+                                                                //
+                                                                $count_nvdem_nteam2_t4 = $cs->CountGetSchedule("Thứ 4", "4PM-10PM", "2");
+                                                                // truong hop 2nv
+                                                                $rescount_nv_team2n_t4 = $count_nvdem_nteam2_t4->fetch_assoc();
+                                                                if ($rescount_nv_team2n_t4['nv'] == '2') {
+                                                                    $get_nv_team2n_t4 = $cs->GetSchedule("Thứ 4", "4PM-10PM", "2");
+                                                                    while ($result_team2_nt4 = $get_nv_team2n_t4->fetch_assoc()) {
+                                                                        echo $result_team2_nt4['ten'] . ",<br/>";
+                                                                    }
+                                                                }
+                                                                // truong hop 1 nv
+                                                                if ($rescount_nv_team2n_t4['nv'] == '1') {
+                                                                    $get_nv_team2n_t4 = $cs->GetSchedule("Thứ 4", "4PM-10PM", "2");
+                                                                    while ($result_team2_nt4 = $get_nv_team2n_t4->fetch_assoc()) {
+                                                                        echo $result_team2_nt4['ten'] . ",<br/>";
+                                                                    }
+                                                                    while ($result_team2_rd_nt4 = $get_rd1nv_night_team2_t4->fetch_assoc()) {
+                                                                        echo $result_team2_rd_nt4['ten'] . ",<br/>";
+                                                                    }
+                                                                }
+                                                                // truong hop 0 nv
+                                                                if ($rescount_nv_team2n_t4['nv'] == '0') {
+                                                                    while ($result_team2_rd_nt4 = $get_rdnight_team2n_t4->fetch_assoc()) {
+                                                                        echo $result_team2_rd_nt4['ten'] . ",<br/>";
                                                                     }
                                                                 }
 
@@ -882,19 +1278,66 @@ if ($rescount_nv_nt4['nv'] == '0') {
                                                         </tr>
                                                         <tr>
                                                             <th scope="row">Thứ 5</th>
-                                                            <td><?php
-                                                                $get_nv5t5 = $cs->show_shiftnhanvien("9AM-4PM", "2");
-                                                                while ($result5t5 = $get_nv5t5->fetch_assoc()) {
-                                                                    echo $result5t5['ten'] . ",<br/>";
+                                                            <td>
+                                                                <?php
+                                                                $get_rd_team2_t5 = $cs->show_shiftnhanvien("9AM-4PM", "2");
+                                                                $get_rd_1nv_team2_t5 = $cs->show_shiftnhanvienRD1("9AM-4PM", "2");
+                                                                //
+                                                                $count_nv_team2_t5 = $cs->CountGetSchedule("Thứ 5", "9AM-4PM", "2");
+                                                                // truong hop 2nv
+                                                                $rescount_nv_team2_t5 = $count_nv_team2_t5->fetch_assoc();
+                                                                if ($rescount_nv_team2_t5['nv'] == '2') {
+                                                                    $get_nv_team2_t5 = $cs->GetSchedule("Thứ 5", "9AM-4PM", "2");
+                                                                    while ($result_team2_t5 = $get_nv_team2_t5->fetch_assoc()) {
+                                                                        echo $result_team2_t5['ten'] . ",<br/>";
+                                                                    }
+                                                                }
+                                                                // truong hop 1 nv
+                                                                if ($rescount_nv_team2_t5['nv'] == '1') {
+                                                                    $get_nv_team2_t5 = $cs->GetSchedule("Thứ 5", "9AM-4PM", "2");
+                                                                    while ($result_team2_t5 = $get_nv_team2_t5->fetch_assoc()) {
+                                                                        echo $result_team2_t5['ten'] . ",<br/>";
+                                                                    }
+                                                                    while ($result_rd_team2_t5 = $get_rd_1nv_team2_t5->fetch_assoc()) {
+                                                                        echo $result_rd_team2_t5['ten'] . ",<br/>";
+                                                                    }
+                                                                }
+                                                                // truong hop 0 nv
+                                                                if ($rescount_nv_team2_t5['nv'] == '0') {
+                                                                    while ($result_rd_team2_t5 = $get_rd_team2_t5->fetch_assoc()) {
+                                                                        echo $result_rd_team2_t5['ten'] . ",<br/>";
+                                                                    }
                                                                 }
                                                                 ?>
                                                             </td>
                                                             <td>
                                                                 <?php
-                                                                $get_nv4105t5 = $cs->show_shiftnhanvien("4PM-10PM", "2");
-                                                                if ($get_nv4105t5) {
-                                                                    while ($result4105t5 = $get_nv4105t5->fetch_assoc()) {
-                                                                        echo $result4105t5['ten'] . ",<br/>";
+                                                                $get_rdnight_team2n_t5 = $cs->show_shiftnhanvien("4PM-10PM", "2");
+                                                                $get_rd1nv_night_team2_t5 = $cs->show_shiftnhanvienRD1("4PM-10PM", "2");
+                                                                //
+                                                                $count_nvdem_nteam2_t5 = $cs->CountGetSchedule("Thứ 5", "4PM-10PM", "2");
+                                                                // truong hop 2nv
+                                                                $rescount_nv_team2n_t5 = $count_nvdem_nteam2_t5->fetch_assoc();
+                                                                if ($rescount_nv_team2n_t5['nv'] == '2') {
+                                                                    $get_nv_team2n_t5 = $cs->GetSchedule("Thứ 5", "4PM-10PM", "2");
+                                                                    while ($result_team2_nt5 = $get_nv_team2n_t5->fetch_assoc()) {
+                                                                        echo $result_team2_nt5['ten'] . ",<br/>";
+                                                                    }
+                                                                }
+                                                                // truong hop 1 nv
+                                                                if ($rescount_nv_team2n_t5['nv'] == '1') {
+                                                                    $get_nv_team2n_t5 = $cs->GetSchedule("Thứ 5", "4PM-10PM", "2");
+                                                                    while ($result_team2_nt5 = $get_nv_team2n_t5->fetch_assoc()) {
+                                                                        echo $result_team2_nt5['ten'] . ",<br/>";
+                                                                    }
+                                                                    while ($result_team2_rd_nt5 = $get_rd1nv_night_team2_t5->fetch_assoc()) {
+                                                                        echo $result_team2_rd_nt5['ten'] . ",<br/>";
+                                                                    }
+                                                                }
+                                                                // truong hop 0 nv
+                                                                if ($rescount_nv_team2n_t5['nv'] == '0') {
+                                                                    while ($result_team2_rd_nt5 = $get_rdnight_team2n_t5->fetch_assoc()) {
+                                                                        echo $result_team2_rd_nt5['ten'] . ",<br/>";
                                                                     }
                                                                 }
 
@@ -928,18 +1371,64 @@ if ($rescount_nv_nt4['nv'] == '0') {
                                                             <th scope="row">Thứ 6</th>
                                                             <td>
                                                                 <?php
-                                                                $get_nv6t6 = $cs->show_shiftnhanvien("9AM-4PM", "2");
-                                                                while ($result6t6 = $get_nv6t6->fetch_assoc()) {
-                                                                    echo $result6t6['ten'] . ",<br/>";
+                                                                $get_rd_team2_t6 = $cs->show_shiftnhanvien("9AM-4PM", "2");
+                                                                $get_rd_1nv_team2_t6 = $cs->show_shiftnhanvienRD1("9AM-4PM", "2");
+                                                                //
+                                                                $count_nv_team2_t6 = $cs->CountGetSchedule("Thứ 6", "9AM-4PM", "2");
+                                                                // truong hop 2nv
+                                                                $rescount_nv_team2_t6 = $count_nv_team2_t6->fetch_assoc();
+                                                                if ($rescount_nv_team2_t6['nv'] == '2') {
+                                                                    $get_nv_team2_t6 = $cs->GetSchedule("Thứ 6", "9AM-4PM", "2");
+                                                                    while ($result_team2_t6 = $get_nv_team2_t6->fetch_assoc()) {
+                                                                        echo $result_team2_t6['ten'] . ",<br/>";
+                                                                    }
+                                                                }
+                                                                // truong hop 1 nv
+                                                                if ($rescount_nv_team2_t6['nv'] == '1') {
+                                                                    $get_nv_team2_t6 = $cs->GetSchedule("Thứ 6", "9AM-4PM", "2");
+                                                                    while ($result_team2_t6 = $get_nv_team2_t6->fetch_assoc()) {
+                                                                        echo $result_team2_t6['ten'] . ",<br/>";
+                                                                    }
+                                                                    while ($result_rd_team2_t6 = $get_rd_1nv_team2_t6->fetch_assoc()) {
+                                                                        echo $result_rd_team2_t6['ten'] . ",<br/>";
+                                                                    }
+                                                                }
+                                                                // truong hop 0 nv
+                                                                if ($rescount_nv_team2_t6['nv'] == '0') {
+                                                                    while ($result_rd_team2_t6 = $get_rd_team2_t6->fetch_assoc()) {
+                                                                        echo $result_rd_team2_t6['ten'] . ",<br/>";
+                                                                    }
                                                                 }
                                                                 ?>
                                                             </td>
                                                             <td>
                                                                 <?php
-                                                                $get_nv4106t6 = $cs->show_shiftnhanvien("4PM-10PM", "2");
-                                                                if ($get_nv4106t6) {
-                                                                    while ($result4106t6 = $get_nv4106t6->fetch_assoc()) {
-                                                                        echo $result4106t6['ten'] . ",<br/>";
+                                                                $get_rdnight_team2n_t6 = $cs->show_shiftnhanvien("4PM-10PM", "2");
+                                                                $get_rd1nv_night_team2_t6 = $cs->show_shiftnhanvienRD1("4PM-10PM", "2");
+                                                                //
+                                                                $count_nvdem_nteam2_t6 = $cs->CountGetSchedule("Thứ 6", "4PM-10PM", "2");
+                                                                // truong hop 2nv
+                                                                $rescount_nv_team2n_t6 = $count_nvdem_nteam2_t6->fetch_assoc();
+                                                                if ($rescount_nv_team2n_t6['nv'] == '2') {
+                                                                    $get_nv_team2n_t6 = $cs->GetSchedule("Thứ 6", "4PM-10PM", "2");
+                                                                    while ($result_team2_nt6 = $get_nv_team2n_t6->fetch_assoc()) {
+                                                                        echo $result_team2_nt6['ten'] . ",<br/>";
+                                                                    }
+                                                                }
+                                                                // truong hop 1 nv
+                                                                if ($rescount_nv_team2n_t6['nv'] == '1') {
+                                                                    $get_nv_team2n_t6 = $cs->GetSchedule("Thứ 6", "4PM-10PM", "2");
+                                                                    while ($result_team2_nt6 = $get_nv_team2n_t6->fetch_assoc()) {
+                                                                        echo $result_team2_nt6['ten'] . ",<br/>";
+                                                                    }
+                                                                    while ($result_team2_rd_nt6 = $get_rd1nv_night_team2_t6->fetch_assoc()) {
+                                                                        echo $result_team2_rd_nt6['ten'] . ",<br/>";
+                                                                    }
+                                                                }
+                                                                // truong hop 0 nv
+                                                                if ($rescount_nv_team2n_t6['nv'] == '0') {
+                                                                    while ($result_team2_rd_nt6 = $get_rdnight_team2n_t6->fetch_assoc()) {
+                                                                        echo $result_team2_rd_nt6['ten'] . ",<br/>";
                                                                     }
                                                                 }
 
@@ -973,18 +1462,65 @@ if ($rescount_nv_nt4['nv'] == '0') {
                                                             <th scope="row">Thứ 7</th>
                                                             <td>
                                                                 <?php
-                                                                $get_nv7t7 = $cs->show_shiftnhanvien("9AM-4PM", "2");
-                                                                while ($result7t7 = $get_nv7t7->fetch_assoc()) {
-                                                                    echo $result7t7['ten'] . ",<br/>";
+                                                                $get_rd_team2_t7 = $cs->show_shiftnhanvien("9AM-4PM", "2");
+                                                                $get_rd_1nv_team2_t7 = $cs->show_shiftnhanvienRD1("9AM-4PM", "2");
+                                                                //
+                                                                $count_nv_team2_t7 = $cs->CountGetSchedule("Thứ 7", "9AM-4PM", "2");
+                                                                // truong hop 2nv
+                                                                $rescount_nv_team2_t7 = $count_nv_team2_t7->fetch_assoc();
+                                                                if ($rescount_nv_team2_t7['nv'] == '2') {
+                                                                    $get_nv_team2_t7 = $cs->GetSchedule("Thứ 7", "9AM-4PM", "2");
+                                                                    while ($result_team2_t7 = $get_nv_team2_t7->fetch_assoc()) {
+                                                                        echo $result_team2_t7['ten'] . ",<br/>";
+                                                                    }
+                                                                }
+                                                                // truong hop 1 nv
+                                                                if ($rescount_nv_team2_t7['nv'] == '1') {
+                                                                    $get_nv_team2_t7 = $cs->GetSchedule("Thứ 7", "9AM-4PM", "2");
+                                                                    while ($result_team2_t7 = $get_nv_team2_t7->fetch_assoc()) {
+                                                                        echo $result_team2_t7['ten'] . ",<br/>";
+                                                                    }
+                                                                    while ($result_rd_team2_t7 = $get_rd_1nv_team2_t7->fetch_assoc()) {
+                                                                        echo $result_rd_team2_t7['ten'] . ",<br/>";
+                                                                    }
+                                                                }
+                                                                // truong hop 0 nv
+                                                                if ($rescount_nv_team2_t7['nv'] == '0') {
+                                                                    while ($result_rd_team2_t7 = $get_rd_team2_t7->fetch_assoc()) {
+                                                                        echo $result_rd_team2_t7['ten'] . ",<br/>";
+                                                                    }
                                                                 }
                                                                 ?>
                                                             </td>
                                                             <td>
                                                                 <?php
-                                                                $get_nv4107t7 = $cs->show_shiftnhanvien("4PM-10PM", "2");
-
-                                                                while ($result4107t7 = $get_nv4107t7->fetch_assoc()) {
-                                                                    echo $result4107t7['ten'] . ",<br/>";
+                                                                $get_rdnight_team2n_t7 = $cs->show_shiftnhanvien("4PM-10PM", "2");
+                                                                $get_rd1nv_night_team2_t7 = $cs->show_shiftnhanvienRD1("4PM-10PM", "2");
+                                                                //
+                                                                $count_nvdem_nteam2_t7 = $cs->CountGetSchedule("Thứ 7", "4PM-10PM", "2");
+                                                                // truong hop 2nv
+                                                                $rescount_nv_team2n_t7 = $count_nvdem_nteam2_t7->fetch_assoc();
+                                                                if ($rescount_nv_team2n_t7['nv'] == '2') {
+                                                                    $get_nv_team2n_t7 = $cs->GetSchedule("Thứ 7", "4PM-10PM", "2");
+                                                                    while ($result_team2_nt7 = $get_nv_team2n_t7->fetch_assoc()) {
+                                                                        echo $result_team2_nt7['ten'] . ",<br/>";
+                                                                    }
+                                                                }
+                                                                // truong hop 1 nv
+                                                                if ($rescount_nv_team2n_t7['nv'] == '1') {
+                                                                    $get_nv_team2n_t7 = $cs->GetSchedule("Thứ 7", "4PM-10PM", "2");
+                                                                    while ($result_team2_nt7 = $get_nv_team2n_t7->fetch_assoc()) {
+                                                                        echo $result_team2_nt7['ten'] . ",<br/>";
+                                                                    }
+                                                                    while ($result_team2_rd_nt7 = $get_rd1nv_night_team2_t7->fetch_assoc()) {
+                                                                        echo $result_team2_rd_nt7['ten'] . ",<br/>";
+                                                                    }
+                                                                }
+                                                                // truong hop 0 nv
+                                                                if ($rescount_nv_team2n_t7['nv'] == '0') {
+                                                                    while ($result_team2_rd_nt7 = $get_rdnight_team2n_t7->fetch_assoc()) {
+                                                                        echo $result_team2_rd_nt7['ten'] . ",<br/>";
+                                                                    }
                                                                 }
 
                                                                 ?>
@@ -1017,18 +1553,65 @@ if ($rescount_nv_nt4['nv'] == '0') {
                                                             <th scope="row">Chủ nhật</th>
                                                             <td>
                                                                 <?php
-                                                                $get_nv44cn1 = $cs->show_shiftnhanvien("9AM-4PM", "2");
-                                                                while ($result44cn1 = $get_nv44cn1->fetch_assoc()) {
-                                                                    echo $result44cn1['ten'] . ",<br/>";
+                                                                $get_rd_team2_cn = $cs->show_shiftnhanvien("9AM-4PM", "2");
+                                                                $get_rd_1nv_team2_cn = $cs->show_shiftnhanvienRD1("9AM-4PM", "2");
+                                                                //
+                                                                $count_nv_team2_cn = $cs->CountGetSchedule("Chủ nhật", "9AM-4PM", "2");
+                                                                // truong hop 2nv
+                                                                $rescount_nv_team2_cn = $count_nv_team2_cn->fetch_assoc();
+                                                                if ($rescount_nv_team2_cn['nv'] == '2') {
+                                                                    $get_nv_team2_cn = $cs->GetSchedule("Chủ nhật", "9AM-4PM", "2");
+                                                                    while ($result_team2_cn = $get_nv_team2_cn->fetch_assoc()) {
+                                                                        echo $result_team2_cn['ten'] . ",<br/>";
+                                                                    }
+                                                                }
+                                                                // truong hop 1 nv
+                                                                if ($rescount_nv_team2_cn['nv'] == '1') {
+                                                                    $get_nv_team2_cn = $cs->GetSchedule("Chủ nhật", "9AM-4PM", "2");
+                                                                    while ($result_team2_cn = $get_nv_team2_cn->fetch_assoc()) {
+                                                                        echo $result_team2_cn['ten'] . ",<br/>";
+                                                                    }
+                                                                    while ($result_rd_team2_cn = $get_rd_1nv_team2_cn->fetch_assoc()) {
+                                                                        echo $result_rd_team2_cn['ten'] . ",<br/>";
+                                                                    }
+                                                                }
+                                                                // truong hop 0 nv
+                                                                if ($rescount_nv_team2_cn['nv'] == '0') {
+                                                                    while ($result_rd_team2_cn = $get_rd_team2_cn->fetch_assoc()) {
+                                                                        echo $result_rd_team2_cn['ten'] . ",<br/>";
+                                                                    }
                                                                 }
                                                                 ?>
                                                             </td>
                                                             <td>
                                                                 <?php
-                                                                $get_nv410cnn = $cs->show_shiftnhanvien("4PM-10PM", "2");
-
-                                                                while ($result410cnn = $get_nv410cnn->fetch_assoc()) {
-                                                                    echo $result410cnn['ten'] . ",<br/>";
+                                                                $get_rdnight_team2n_cn = $cs->show_shiftnhanvien("4PM-10PM", "2");
+                                                                $get_rd1nv_night_team2_cn = $cs->show_shiftnhanvienRD1("4PM-10PM", "2");
+                                                                //
+                                                                $count_nvdem_nteam2_cn = $cs->CountGetSchedule("Chủ nhật", "4PM-10PM", "2");
+                                                                // truong hop 2nv
+                                                                $rescount_nv_team2n_cn = $count_nvdem_nteam2_cn->fetch_assoc();
+                                                                if ($rescount_nv_team2n_cn['nv'] == '2') {
+                                                                    $get_nv_team2n_cn = $cs->GetSchedule("Chủ nhật", "4PM-10PM", "2");
+                                                                    while ($result_team2_ncn = $get_nv_team2n_cn->fetch_assoc()) {
+                                                                        echo $result_team2_ncn['ten'] . ",<br/>";
+                                                                    }
+                                                                }
+                                                                // truong hop 1 nv
+                                                                if ($rescount_nv_team2n_cn['nv'] == '1') {
+                                                                    $get_nv_team2n_cn = $cs->GetSchedule("Chủ nhật", "4PM-10PM", "2");
+                                                                    while ($result_team2_ncn = $get_nv_team2n_cn->fetch_assoc()) {
+                                                                        echo $result_team2_ncn['ten'] . ",<br/>";
+                                                                    }
+                                                                    while ($result_team2_rd_ncn = $get_rd1nv_night_team2_cn->fetch_assoc()) {
+                                                                        echo $result_team2_rd_ncn['ten'] . ",<br/>";
+                                                                    }
+                                                                }
+                                                                // truong hop 0 nv
+                                                                if ($rescount_nv_team2n_cn['nv'] == '0') {
+                                                                    while ($result_team2_rd_ncn = $get_rdnight_team2n_cn->fetch_assoc()) {
+                                                                        echo $result_team2_rd_ncn['ten'] . ",<br/>";
+                                                                    }
                                                                 }
 
                                                                 ?>
